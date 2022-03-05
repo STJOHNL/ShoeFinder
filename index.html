@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find your next running shoe with our shoe finder!">
+    <meta name="keywords" content="one, two, three">
+    <meta name="author" content="Logan St. John">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Shoe Finder</h1>
+    <form id="location">
+        <h2>Where do you run/walk?</h2>
+        <input id="road" type="radio" name="location" value="road">
+        <label for="road">Road/Gym</label>
+        <input id="trail" type="radio" name="location" value="trail">
+        <label for="trail">Trail</label>
+    </form>
+
+    <form id="mileage" class="hidden">
+        <h2>How many miles a week do you run/walk?</h2>
+        <input id="underTen" type="radio" name="mileage" value="underTen">
+        <label for="underTen">0-10 Miles</label>
+        <input id="tenToTwenty" type="radio" name="mileage" value="tenToTwenty">
+        <label for="tenToTwenty">10-20 Miles</label>
+        <input id="moreThanThirty" type="radio" name="mileage" value="moreThanThirty">
+        <label for="moreThanThirty">30+ Miles</label>
+    </form>
+
+    <form id="races" class="hidden">
+        <h2>Any upcoming races?</h2>
+        <input id="fiveK" type="checkbox" name="fiveK" value="fiveK">
+        <label for="fiveK">5K</label>
+        <input id="tenK" type="checkbox" name="tenK" value="tenK">
+        <label for="tenK">10K</label>
+        <input id="halfMarathon" type="checkbox" name="halfMarathon" value="halfMarathon">
+        <label for="halfMarathon">Half Marathon</label>
+        <input id="marathon" type="checkbox" name="marathon" value="marathon">
+        <label for="marathon">Marathon</label>
+        <input id="noRace" type="checkbox" name="noRace" value="noRace">
+        <label for="noRace">No races planned</label>
+        <button id="raceSubmit" type="button" name="button">Next</button>
+    </form>
+
+    <form id="arch" class="hidden">
+        <h2>What arch type do you have?</h2>
+        <input id="flatArch" type="radio" name="arch" value="flatArch">
+        <label for="flatArch">Flat</label>
+        <input id="normArch" type="radio" name="arch" value="normArch">
+        <label for="normArch">Medium</label>
+        <input id="highArch" type="radio" name="arch" value="highArch">
+        <label for="highArch">High</label>
+    </form>
+
+    <form id="legs" class="hidden">
+        <h2>What is your leg shape?</h2>
+        <input id="knockKnee" type="radio" name="legs" value="knockKnee">
+        <label for="knockKnee">Knock Knees</label>
+        <input id="straightLegs" type="radio" name="legs" value="straightLegs">
+        <label for="straightLegs">Straight</label>
+        <input id="bow" type="radio" name="legs" value="bow">
+        <label for="bow">Bow Legs</label>
+    </form>
+
+    <form id="kneeTrack" class="hidden">
+        <h2>How does your knee track in a shallow squat?</h2>
+        <input id="rotateOut" type="radio" name="kneeTrack" value="rotateOut">
+        <label for="rotateOut">Knee Rotates Outward</label>
+        <input id="straight" type="radio" name="kneeTrack" value="straight">
+        <label for="straight">Knee Tracks Straight</label>
+        <input id="rotateIn" type="radio" name="kneeTrack" value="rotateIn">
+        <label for="rotateIn">Knee Tracks Inward</label>
+    </form>
+
+    <form id="injury" class="hidden">
+        <h2>Do you have any aches or pains?</h2>
+        <input id="back" type="checkbox" name="back" value="back">
+        <label for="back">Back</label>
+        <input id="hips" type="checkbox" name="hips" value="hips">
+        <label for="hips">Hips</label>
+        <input id="knees" type="checkbox" name="knees" value="knees">
+        <label for="knees">Knees</label>
+        <input id="calves" type="checkbox" name="calves" value="calves">
+        <label for="calves">Calves</label>
+        <input id="shins" type="checkbox" name="shins" value="shins">
+        <label for="shins">Shins</label>
+        <input id="achilles" type="checkbox" name="achilles" value="achilles">
+        <label for="achilles">Achilles/Ankle</label>
+        <input id="feet" type="checkbox" name="feet" value="feet">
+        <label for="feet">Feet</label>
+        <input id="bunions" type="checkbox" name="bunions" value="bunions">
+        <label for="bunions">Bunions</label>
+        <input id="plantar" type="checkbox" name="plantar" value="plantar">
+        <label for="plantar">Plantar Fasciitis</label>
+        <input id="noInjury" type="checkbox" name="noInjury" value="noInjury">
+        <label for="noInjury">So far, so good!</label>
+        <button id="injurySubmit" type="button" name="button">Next</button>
+    </form>
+
+    <form id="cushion" class="hidden">
+        <h2>What is your preferred cushion level?</h2>
+        <input id="lightFast" type="radio" name="cushion" value="lightFast">
+        <label for="lightFast">Light & Fast</label>
+        <input id="midCushion" type="radio" name="cushion" value="midCushion">
+        <label for="midCushion">Medium Cushion</label>
+        <input id="maxCushion" type="radio" name="cushion" value="maxCushion">
+        <label for="maxCushion">Max Cushion</label>
+    </form>
+
+    <form id="brand" class="hidden">
+        <h2>What brands do you like?</h2>
+        <input id="altra" type="checkbox" name="altra" value="altra">
+        <label for="altra">Altra</label>
+        <input id="asics" type="checkbox" name="asics" value="asics">
+        <label for="asics">Asics</label>
+        <input id="brooks" type="checkbox" name="brooks" value="brooks">
+        <label for="brooks">Brooks</label>
+        <input id="hoka" type="checkbox" name="hoka" value="hoka">
+        <label for="hoka">HOKA One One</label>
+        <input id="mizuno" type="checkbox" name="mizuno" value="mizuno">
+        <label for="mizuno">Mizuno</label>
+        <input id="newBalance" type="checkbox" name="newBalance" value="newBalance">
+        <label for="newBalance">New Balance</label>
+        <input id="nike" type="checkbox" name="nike" value="nike">
+        <label for="nike">Nike</label>
+        <input id="onRunning" type="checkbox" name="onRunning" value="onRunning">
+        <label for="onRunning">ON</label>
+        <input id="saucony" type="checkbox" name="saucony" value="saucony">
+        <label for="saucony">Saucony</label>
+        <input id="notPicky" type="checkbox" name="notPicky" value="notPicky">
+        <label for="notPicky">Show me everything!</label>
+        <button id="brandSubmit" type="button" name="button">Next</button>
+    </form>
+
+    <form id="gender" class="hidden">
+        <h2>What gender shoe are you looking for?</h2>
+        <input id="womensShoes" type="radio" name="gender" value="womensShoes">
+        <label for="womensShoes">Women's Shoes</label>
+        <input id="mensShoes" type="radio" name="gender" value="mensShoes">
+        <label for="mensShoes">Men's Shoes</label>
+    </form>
+
+    <!-- <form class="hidden">
+        <h2>What is your shoe size?</h2>
+        <select name="womensSize" id="womensShoeSize">
+            <option value="5">5</option>
+            <option value="5.5">5.5</option>
+            <option value="6">6</option>
+            <option value="6.5">6.5</option>
+            <option value="7">7</option>
+            <option value="7.5">7.5</option>
+            <option selected="selected" value="8">8</option>
+            <option value="8.5">8.5</option>
+            <option value="9">9</option>
+            <option value="9.5">9.5</option>
+            <option value="10">10</option>
+            <option value="10.5">10.5</option>
+            <option value="11">11</option>
+            <option value="11.5">11.5</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+        </select>
+    </form>
+
+    <form class="hidden">
+        <h2>What is your shoe size?</h2>
+        <select name="mensSize" id="mensShoeSize">
+            <option value="7">7</option>
+            <option value="7.5">7.5</option>
+            <option value="8">8</option>
+            <option value="8.5">8.5</option>
+            <option value="9">9</option>
+            <option value="9.5">9.5</option>
+            <option selected="selected" value="10">10</option>
+            <option value="10.5">10.5</option>
+            <option value="11">11</option>
+            <option value="11.5">11.5</option>
+            <option value="12">12</option>
+            <option value="12.5">12.5</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+        </select>
+    </form> -->
+    <section id="results" class="hidden">
+
+        <!-- Men's Shoes -->
+
+        <h2 id="displayMensResult"></h2>
+
+        <!-- Altra -->
+        <section id="torinM" class="altra neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Altra Torin 5</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="escalanteM" class="altra neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Altra Escalante 2.5</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="riveraM" class="altra neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Altra Rivera</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="provisionM" class="altra stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Altra Provision</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- Asics -->
+        <section id="nimbusM" class="asics neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Asics Gel-Nimbus 24</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="evorideM" class="asics neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Asics EvoRide 2</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="kayanoM" class="asics stabilityMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Asics Gel-Kayano 28</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="gtTwoThousandM" class="asics stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Asics GT-2000 10</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- Brooks -->
+        <section id="launchM" class="brooks neutralLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Launch 8</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="hyperionTempo" class="brooks lightNeutral shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Hyperion Tempo</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="hyperionEliteM" class="brooks lightNeutral shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Hyperion Elite 2</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="glycerinM" class="brooks neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Glycerin 19</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="levitateM" class="brooks neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Levitate 5</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="ghostM" class="brooks neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Ghost 14</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="traceM" class="brooks neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Trace</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="launchGTSM" class="brooks stabilityLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Launch GTS 8</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="glycerinGTSM" class="brooks stabilityMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Glycerin GTS 19</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="adrenalineM" class="brooks stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Adrenaline GTS 22</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- HOKA -->
+        <section id="rinconM" class="hoka neutralLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Rincon 3</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="carbonXM" class="hoka neutralLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Carbon X 2</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="machM" class="hoka neutralLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Mach 4</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="bondiM" class="hoka neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Bondi 7</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="cliftonM" class="hoka neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Clifton 8</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="kawanaM" class="hoka neutralMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Kawana</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="gaviotaM" class="hoka stabilityMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Gaviota 4</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="arahiM" class="hoka stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Arahi 5</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- Mizuno -->
+        <section id="riderM" class="mizuno neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Mizuno Wave Rider 25</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="horizonM" class="mizuno stabilityMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Mizuno Wave Horizon 5</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="inspireM" class="mizuno stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Mizuno Wave Inspire 17</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- New Balance -->
+        <section id="tenEightyM" class="newBalance neutralMax hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>New Balance 1080v12</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="eightEightyM" class="newBalance neutralMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>New Balance 880v11</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="vongoM" class="newBalance stabilityMax hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>New Balance Vongo v5</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="eightSixtyM" class="newBalance stabilityMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>New Balance 860v12</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- Nike -->
+        <section id="vomeroM" class="nike neutralMax hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Nike Vomero</h4>
+                <img src="https://placekitten.com/300/300" alt=""></h4>
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        </a>
+        <section id="pegasusM" class="nike neutralMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Nike Pegasus 38</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="zoomFlyM" class="nike neutralMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Nike Zoom Fly</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- ON -->
+        <section id="cloudMonsterM" class="onRunning neutralMax hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>On CloudMonster</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="cloudStratusM" class="onRunning neutralMax hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>On CloudStratus</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="cloudflowM" class="onRunning neutralMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>On Cloudflow</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="cloudgoM" class="onRunning neutralMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>On Cloudgo</h4>
+                <h4> <img src="https://placekitten.com/300/300" alt=""></h4>
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        </a>
+        <section id="cloudflyerM" class="onRunning stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>On Cloudflyer</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- Saucony -->
+        <section id="kinvaraM" class="saucony neutralLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Kinvara 13</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="speedM" class="saucony neutralLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Endorphin Speed 2</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="triumphM" class="saucony neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Triumph 20</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="rideM" class="saucony neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Ride 14</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="shiftM" class="saucony stabilityMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Endorphin Shift 2</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="guideM" class="saucony stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Guide 14</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="omniM" class="saucony stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Omni 20</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+
+        <!-- Women's Shoes -->
+
+        <h2 id="displayWomensResult"></h2>
+        <!-- Altra -->
+        <section id="torinW" class="altra neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Altra Torin 5</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="escalanteW" class="altra neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Altra Escalante 2.5</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="riveraW" class="altra neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Altra Rivera</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="provisionW" class="altra stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Altra Provision</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- Asics -->
+        <section id="nimbusW" class="asics neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Asics Gel-Nimbus 24</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="evorideW" class="asics neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Asics EvoRide 2</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="kayanoW" class="asics stabilityMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Asics Gel-Kayano 28</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="gtTwoThousandW" class="asics stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Asics GT-2000 10</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- Brooks -->
+        <section id="launchW" class="brooks neutralLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Launch 8</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="hyperionTempoW" class="brooks lightNeutral shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Hyperion Tempo</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="hyperionEliteW" class="brooks lightNeutral shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Hyperion Elite 2</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="glycerinW" class="brooks neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Glycerin 19</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="levitateW" class="brooks neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Levitate 5</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="ghostW" class="brooks neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Ghost 14</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="traceW" class="brooks neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Trace</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="launchGTSW" class="brooks stabilityLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Launch GTS 8</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="glycerinGTSW" class="brooks stabilityMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Glycerin GTS 19</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="adrenalineW" class="brooks stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Brooks Adrenaline GTS 22</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- HOKA -->
+        <section id="rinconW" class="hoka neutralLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Rincon 3</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="carbonXW" class="hoka neutralLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Carbon X 2</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="machW" class="hoka neutralLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Mach 4</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="bondiW" class="hoka neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Bondi 7</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="cliftonW" class="hoka neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Clifton 8</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="kawanaW" class="hoka neutralMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Kawana</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="gaviotaW" class="hoka stabilityMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Gaviota 4</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="arahiW" class="hoka stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>HOKA One One Arahi 5</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- Mizuno -->
+        <section id="riderW" class="mizuno neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Mizuno Wave Rider 25</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="horizonW" class="mizuno stabilityMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Mizuno Wave Horizon 5</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="inspireW" class="mizuno stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Mizuno Wave Inspire 17</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- New Balance -->
+        <section id="tenEightyW" class="newBalance neutralMax hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>New Balance 1080v12</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="eightEightyW" class="newBalance neutralMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>New Balance 880v11</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="vongoW" class="newBalance stabilityMax hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>New Balance Vongo v5</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="eightSixtyW" class="newBalance stabilityMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>New Balance 860v12</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- Nike -->
+        <section id="vomeroW" class="nike neutralMax hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Nike Vomero</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        </a>
+        <section id="pegasusW" class="nike neutralMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Nike Pegasus 38</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="zoomFlyW" class="nike neutralMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Nike Zoom Fly</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- ON -->
+        <section id="cloudMonsterW" class="onRunning neutralMax hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>On CloudMonster</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="cloudStratusW" class="onRunning neutralMax hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>On CloudStratus</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="cloudflowW" class="onRunning neutralMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>On Cloudflow</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="cloudgoW" class="onRunning neutralMid hidden shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>On CloudGo</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        </a>
+        <section id="cloudflyerW" class="onRunning stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>On Cloudflyer</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <!-- Saucony -->
+        <section id="kinvaraW" class="saucony neutralLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Kinvara 13</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="speedW" class="saucony neutralLight shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Endorphin Speed 2</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="triumphW" class="saucony neutralMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Triumph 20</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="rideW" class="saucony neutralMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Ride 14</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="shiftW" class="saucony stabilityMax shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Endorphin Shift 2</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="guideW" class="saucony stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Guide 14</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+        <section id="omniW" class="saucony stabilityMid shoeBlock hidden">
+            <a href="#" target="_blank">
+                <h4>Saucony Omni 20</h4>
+                <img src="https://placekitten.com/300/300" alt="">
+                <a class="shopBttn" target="_blank" href="#">Shop Now</a>
+            </a>
+        </section>
+    </section>
+
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
