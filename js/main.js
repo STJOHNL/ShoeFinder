@@ -39,27 +39,27 @@ document.querySelector('#moreThanThirty').addEventListener('click', moreThanThir
 
 function underTen() {
     mileage.classList.toggle('hidden');
-    races.classList.toggle('hidden');
+    arch.classList.toggle('hidden');
 }
 
 function tenToTwenty() {
     mileage.classList.toggle('hidden');
-    races.classList.toggle('hidden');
+    arch.classList.toggle('hidden');
 }
 
 function moreThanThirty() {
     mileage.classList.toggle('hidden');
-    races.classList.toggle('hidden');
+    arch.classList.toggle('hidden');
 }
 
 // Events the user is training for
 
-document.querySelector('#raceSubmit').addEventListener('click', upcomingRaces);
+// document.querySelector('#raceSubmit').addEventListener('click', upcomingRaces);
 
-function upcomingRaces() {
-    races.classList.toggle('hidden');
-    arch.classList.toggle('hidden');
-}
+// function upcomingRaces() {
+//     races.classList.toggle('hidden');
+//     arch.classList.toggle('hidden');
+// }
 
 // Arch type
 
@@ -116,30 +116,30 @@ document.querySelector('#rotateIn').addEventListener('click', rotateIn);
 
 function rotateOut() {
     kneeTrack.classList.toggle('hidden');
-    injury.classList.toggle('hidden');
+    cushion.classList.toggle('hidden');
     supportLevel = supportLevel - 1;
 }
 
 function straight() {
     kneeTrack.classList.toggle('hidden');
-    injury.classList.toggle('hidden');
+    cushion.classList.toggle('hidden');
 }
 
 function rotateIn() {
     kneeTrack.classList.toggle('hidden');
-    injury.classList.toggle('hidden');
+    cushion.classList.toggle('hidden');
     supportLevel = supportLevel + 1;
 }
 
 // Injury history
 
-document.querySelector('#injurySubmit').addEventListener('click', injuries);
+// document.querySelector('#injurySubmit').addEventListener('click', injuries);
 
-function injuries() {
-    injury.classList.toggle('hidden');
-    cushion.classList.toggle('hidden');
+// function injuries() {
+//     injury.classList.toggle('hidden');
+//     cushion.classList.toggle('hidden');
 
-}
+// }
 
 // Desried cushion level
 
@@ -151,31 +151,31 @@ let cushionLevel = 'error';
 
 function lightFast() {
     cushion.classList.toggle('hidden');
-    brand.classList.toggle('hidden');
+    gender.classList.toggle('hidden');
     cushionLevel = document.querySelector('#lightFast').value;
 }
 
 function midCushion() {
     cushion.classList.toggle('hidden');
-    brand.classList.toggle('hidden');
+    gender.classList.toggle('hidden');
     cushionLevel = document.querySelector('#midCushion').value;
 
 }
 
 function maxCushion() {
     cushion.classList.toggle('hidden');
-    brand.classList.toggle('hidden');
+    gender.classList.toggle('hidden');
     cushionLevel = document.querySelector('#maxCushion').value;
 }
 
 // Preferred brands
 
-document.querySelector('#brandSubmit').addEventListener('click', brandSubmit);
+// document.querySelector('#brandSubmit').addEventListener('click', brandSubmit);
 
-function brandSubmit() {
-    brand.classList.toggle('hidden');
-    gender.classList.toggle('hidden');
-}
+// function brandSubmit() {
+//     brand.classList.toggle('hidden');
+//     gender.classList.toggle('hidden');
+// }
 
 // Gender
 

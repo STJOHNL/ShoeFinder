@@ -13,143 +13,145 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Shoe Finder</title>
 </head>
 
 <body>
     <h1>Shoe Finder</h1>
-    <form id="location">
+
+    <section id="location">
         <h2>Where do you run/walk?</h2>
-        <input id="road" type="radio" name="location" value="road">
-        <label for="road">Road/Gym</label>
-        <input id="trail" type="radio" name="location" value="trail">
-        <label for="trail">Trail</label>
-    </form>
+        <section class="questionContainer">
+            <button id="road" type="button" value="road">Road/Gym</button>
+            <button id="trail" type="button" value="trail">Trail</button>
+        </section>
+    </section>
 
-    <form id="mileage" class="hidden">
+    <section id="mileage" class="hidden">
         <h2>How many miles a week do you run/walk?</h2>
-        <input id="underTen" type="radio" name="mileage" value="underTen">
-        <label for="underTen">0-10 Miles</label>
-        <input id="tenToTwenty" type="radio" name="mileage" value="tenToTwenty">
-        <label for="tenToTwenty">10-20 Miles</label>
-        <input id="moreThanThirty" type="radio" name="mileage" value="moreThanThirty">
-        <label for="moreThanThirty">30+ Miles</label>
-    </form>
+        <section class="questionContainer">
+            <button id="underTen" type="button" value="underTen">0-10 Miles</button>
+            <button id="tenToTwenty" type="button" value="tenToTwenty">10-20 Miles</button>
+            <button id="moreThanThirty" type="button" value="moreThanThirty">30+ Miles</button>
+        </section>
+    </section>
 
-    <form id="races" class="hidden">
+    <!-- <section id="races" class="hidden">
         <h2>Any upcoming races?</h2>
-        <input id="fiveK" type="checkbox" name="fiveK" value="fiveK">
-        <label for="fiveK">5K</label>
-        <input id="tenK" type="checkbox" name="tenK" value="tenK">
-        <label for="tenK">10K</label>
-        <input id="halfMarathon" type="checkbox" name="halfMarathon" value="halfMarathon">
-        <label for="halfMarathon">Half Marathon</label>
-        <input id="marathon" type="checkbox" name="marathon" value="marathon">
-        <label for="marathon">Marathon</label>
-        <input id="noRace" type="checkbox" name="noRace" value="noRace">
-        <label for="noRace">No races planned</label>
-        <button id="raceSubmit" type="button" name="button">Next</button>
-    </form>
+        <section class="questionContainer">
+            <input id="fiveK" type="checkbox" name="fiveK" value="fiveK">
+            <label for="fiveK" class="checkboxChild">5K</label>
+            <input id="tenK" type="checkbox" name="tenK" value="tenK">
+            <label for="tenK" class="checkboxChild">10K</label>
+            <input id="halfMarathon" type="checkbox" name="halfMarathon" value="halfMarathon">
+            <label for="halfMarathon" class="checkboxChild">Half Marathon</label>
+            <input id="marathon" type="checkbox" name="marathon" value="marathon">
+            <label for="marathon" class="checkboxChild">Marathon</label>
+            <input id="noRace" type="checkbox" name="noRace" value="noRace">
+            <label for="noRace" class="checkboxChild">No races planned</label>
+            <button id="raceSubmit" type="button" name="button">Next</button>
+        </section>
+    </section> -->
 
-    <form id="arch" class="hidden">
+    <section id="arch" class="hidden">
         <h2>What arch type do you have?</h2>
-        <input id="flatArch" type="radio" name="arch" value="flatArch">
-        <label for="flatArch">Flat</label>
-        <input id="normArch" type="radio" name="arch" value="normArch">
-        <label for="normArch">Medium</label>
-        <input id="highArch" type="radio" name="arch" value="highArch">
-        <label for="highArch">High</label>
-    </form>
+        <section class="questionContainer">
+            <button id="flatArch" type="button" value="flatArch">Flat</button>
+            <button id="normArch" type="button" value="normArch">Medium</button>
+            <button id="highArch" type="button" value="highArch">High</button>
+        </section>
+    </section>
 
-    <form id="legs" class="hidden">
+    <section id="legs" class="hidden">
         <h2>What is your leg shape?</h2>
-        <input id="knockKnee" type="radio" name="legs" value="knockKnee">
-        <label for="knockKnee">Knock Knees</label>
-        <input id="straightLegs" type="radio" name="legs" value="straightLegs">
-        <label for="straightLegs">Straight</label>
-        <input id="bow" type="radio" name="legs" value="bow">
-        <label for="bow">Bow Legs</label>
-    </form>
+        <section class="questionContainer">
+            <button id="knockKnee" type="button" value="knockKnee">Knock Knees</button>
+            <button id="straightLegs" type="button" value="straightLegs">Straight</button>
+            <button id="bow" type="button" value="bow">Bow Legs</button>
+        </section>
+    </section>
 
-    <form id="kneeTrack" class="hidden">
+    <section id="kneeTrack" class="hidden">
         <h2>How does your knee track in a shallow squat?</h2>
-        <input id="rotateOut" type="radio" name="kneeTrack" value="rotateOut">
-        <label for="rotateOut">Knee Rotates Outward</label>
-        <input id="straight" type="radio" name="kneeTrack" value="straight">
-        <label for="straight">Knee Tracks Straight</label>
-        <input id="rotateIn" type="radio" name="kneeTrack" value="rotateIn">
-        <label for="rotateIn">Knee Tracks Inward</label>
-    </form>
+        <section class="questionContainer">
+            <button id="rotateOut" type="button" value="rotateOut">Knees Rotate Outward</button>
+            <button id="straight" type="button" value="straight">Knee Tracks Straight</button>
+            <button id="rotateIn" type="button" value="rotateIn">Knee Tracks Inward</button>
+        </section>
+    </section>
 
-    <form id="injury" class="hidden">
+    <!-- <section id="injury" class="hidden">
         <h2>Do you have any aches or pains?</h2>
-        <input id="back" type="checkbox" name="back" value="back">
-        <label for="back">Back</label>
-        <input id="hips" type="checkbox" name="hips" value="hips">
-        <label for="hips">Hips</label>
-        <input id="knees" type="checkbox" name="knees" value="knees">
-        <label for="knees">Knees</label>
-        <input id="calves" type="checkbox" name="calves" value="calves">
-        <label for="calves">Calves</label>
-        <input id="shins" type="checkbox" name="shins" value="shins">
-        <label for="shins">Shins</label>
-        <input id="achilles" type="checkbox" name="achilles" value="achilles">
-        <label for="achilles">Achilles/Ankle</label>
-        <input id="feet" type="checkbox" name="feet" value="feet">
-        <label for="feet">Feet</label>
-        <input id="bunions" type="checkbox" name="bunions" value="bunions">
-        <label for="bunions">Bunions</label>
-        <input id="plantar" type="checkbox" name="plantar" value="plantar">
-        <label for="plantar">Plantar Fasciitis</label>
-        <input id="noInjury" type="checkbox" name="noInjury" value="noInjury">
-        <label for="noInjury">So far, so good!</label>
-        <button id="injurySubmit" type="button" name="button">Next</button>
-    </form>
+        <section class="questionContainer">
+            <input id="back" type="checkbox" name="back" value="back">
+            <label for="back">Back</label>
+            <input id="hips" type="checkbox" name="hips" value="hips">
+            <label for="hips">Hips</label>
+            <input id="knees" type="checkbox" name="knees" value="knees">
+            <label for="knees">Knees</label>
+            <input id="calves" type="checkbox" name="calves" value="calves">
+            <label for="calves">Calves</label>
+            <input id="shins" type="checkbox" name="shins" value="shins">
+            <label for="shins">Shins</label>
+            <input id="achilles" type="checkbox" name="achilles" value="achilles">
+            <label for="achilles">Achilles/Ankle</label>
+            <input id="feet" type="checkbox" name="feet" value="feet">
+            <label for="feet">Feet</label>
+            <input id="bunions" type="checkbox" name="bunions" value="bunions">
+            <label for="bunions">Bunions</label>
+            <input id="plantar" type="checkbox" name="plantar" value="plantar">
+            <label for="plantar">Plantar Fasciitis</label>
+            <input id="noInjury" type="checkbox" name="noInjury" value="noInjury">
+            <label for="noInjury">So far, so good!</label>
+            <button id="injurySubmit" type="button" name="button">Next</button>
+        </section>
+    </section> -->
 
-    <form id="cushion" class="hidden">
+    <section id="cushion" class="hidden">
         <h2>What is your preferred cushion level?</h2>
-        <input id="lightFast" type="radio" name="cushion" value="lightFast">
-        <label for="lightFast">Light & Fast</label>
-        <input id="midCushion" type="radio" name="cushion" value="midCushion">
-        <label for="midCushion">Medium Cushion</label>
-        <input id="maxCushion" type="radio" name="cushion" value="maxCushion">
-        <label for="maxCushion">Max Cushion</label>
-    </form>
+        <section class="questionContainer">
+            <button id="lightFast" type="button" value="lightFast">Light & Fast</button>
+            <button id="midCushion" type="button" value="midCushion">Medium Cushion</button>
+            <button id="maxCushion" type="button" value="maxCushion">Max Cushion</button>
+        </section>
+    </section>
 
-    <form id="brand" class="hidden">
+    <!-- <section id="brand" class="hidden">
         <h2>What brands do you like?</h2>
-        <input id="altra" type="checkbox" name="altra" value="altra">
-        <label for="altra">Altra</label>
-        <input id="asics" type="checkbox" name="asics" value="asics">
-        <label for="asics">Asics</label>
-        <input id="brooks" type="checkbox" name="brooks" value="brooks">
-        <label for="brooks">Brooks</label>
-        <input id="hoka" type="checkbox" name="hoka" value="hoka">
-        <label for="hoka">HOKA One One</label>
-        <input id="mizuno" type="checkbox" name="mizuno" value="mizuno">
-        <label for="mizuno">Mizuno</label>
-        <input id="newBalance" type="checkbox" name="newBalance" value="newBalance">
-        <label for="newBalance">New Balance</label>
-        <input id="nike" type="checkbox" name="nike" value="nike">
-        <label for="nike">Nike</label>
-        <input id="onRunning" type="checkbox" name="onRunning" value="onRunning">
-        <label for="onRunning">ON</label>
-        <input id="saucony" type="checkbox" name="saucony" value="saucony">
-        <label for="saucony">Saucony</label>
-        <input id="notPicky" type="checkbox" name="notPicky" value="notPicky">
-        <label for="notPicky">Show me everything!</label>
-        <button id="brandSubmit" type="button" name="button">Next</button>
-    </form>
+        <section class="questionContainer">
+            <input id="altra" type="checkbox" name="altra" value="altra">
+            <label for="altra">Altra</label>
+            <input id="asics" type="checkbox" name="asics" value="asics">
+            <label for="asics">Asics</label>
+            <input id="brooks" type="checkbox" name="brooks" value="brooks">
+            <label for="brooks">Brooks</label>
+            <input id="hoka" type="checkbox" name="hoka" value="hoka">
+            <label for="hoka">HOKA One One</label>
+            <input id="mizuno" type="checkbox" name="mizuno" value="mizuno">
+            <label for="mizuno">Mizuno</label>
+            <input id="newBalance" type="checkbox" name="newBalance" value="newBalance">
+            <label for="newBalance">New Balance</label>
+            <input id="nike" type="checkbox" name="nike" value="nike">
+            <label for="nike">Nike</label>
+            <input id="onRunning" type="checkbox" name="onRunning" value="onRunning">
+            <label for="onRunning">ON</label>
+            <input id="saucony" type="checkbox" name="saucony" value="saucony">
+            <label for="saucony">Saucony</label>
+            <input id="notPicky" type="checkbox" name="notPicky" value="notPicky">
+            <label for="notPicky">Show me everything!</label>
+            <button id="brandSubmit" type="button" name="button">Next</button>
+        </section>
+    </section> -->
 
-    <form id="gender" class="hidden">
+    <section id="gender" class="hidden">
         <h2>What gender shoe are you looking for?</h2>
-        <input id="womensShoes" type="radio" name="gender" value="womensShoes">
-        <label for="womensShoes">Women's Shoes</label>
-        <input id="mensShoes" type="radio" name="gender" value="mensShoes">
-        <label for="mensShoes">Men's Shoes</label>
-    </form>
+        <section class="questionContainer">
+            <button id="womensShoes" type="button" value="womensShoes">Women's Shoes</button>
+            <button id="mensShoes" type="button" value="mensShoes">Men's Shoes</button>
+        </section>
+    </section>
 
-    <!-- <form class="hidden">
+    <!-- <section class="hidden">
         <h2>What is your shoe size?</h2>
         <select name="womensSize" id="womensShoeSize">
             <option value="5">5</option>
@@ -169,9 +171,9 @@
             <option value="12">12</option>
             <option value="13">13</option>
         </select>
-    </form>
+    </section>
 
-    <form class="hidden">
+    <section class="hidden">
         <h2>What is your shoe size?</h2>
         <select name="mensSize" id="mensShoeSize">
             <option value="7">7</option>
@@ -190,7 +192,7 @@
             <option value="14">14</option>
             <option value="15">15</option>
         </select>
-    </form> -->
+    </section> -->
     <section id="results" class="hidden">
 
         <!-- Men's Shoes -->

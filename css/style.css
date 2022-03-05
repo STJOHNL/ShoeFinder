@@ -89,6 +89,23 @@ footer {
      border-radius: 15px;
 }
 
-form input{
-     display: block;
+.questionContainer {
+     width: 50%;
+     border: 3px solid black;
+     margin: auto;
+     display: flex;
+     justify-content: space-around;
+}
+
+.questionContainer button {
+     padding: 10px;
+     margin: 10px;
+     color: white;
+     background-color: #ff6600;
+     border: none;
+     border-radius: 10px;
+}
+
+.questionContainer button:hover {
+     background-color: #222;
 }
