@@ -199,7 +199,6 @@ function mensShoes() {
 
 // Desired size
 
-
 // Men's shoe categories
 
 // Only show Men's Light Cushion Neutral Shoes
@@ -410,3 +409,5 @@ function finalResult() {
 // Show recommended insoles based on leg and arch type
 // Show injury support accessories based on items checked
 // Show nutrition based on races selected
+// Add Back button
+// Add restart button
