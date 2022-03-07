@@ -405,9 +405,9 @@ function finalResult() {
 
 
 // Tasks
+// Add Back button
+// Add restart button
 // Only show brands selected
 // Show recommended insoles based on leg and arch type
 // Show injury support accessories based on items checked
 // Show nutrition based on races selected
-// Add Back button
-// Add restart button
