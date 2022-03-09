@@ -212,6 +212,7 @@ function mensNeutralLight() {
     document.querySelector("#machM").classList.toggle('hidden');
     document.querySelector("#kinvaraM").classList.toggle('hidden');
     document.querySelector("#speedM").classList.toggle('hidden');
+    document.querySelector("#cloudXM").classList.toggle('hidden');
 }
 
 // Only show Men's Medium Cushion Neutral Shoes
@@ -277,6 +278,7 @@ function mensStabilityMax() {
     document.querySelector("#horizonM").classList.toggle('hidden');
     document.querySelector("#vongoM").classList.toggle('hidden');
     document.querySelector("#shiftM").classList.toggle('hidden');
+    document.querySelector("levitateGTSM").classList.toggle('hidden');
 }
 
 // Women's shoe categories
@@ -292,6 +294,7 @@ function womensNeutralLight() {
     document.querySelector("#machW").classList.toggle('hidden');
     document.querySelector("#kinvaraW").classList.toggle('hidden');
     document.querySelector("#speedW").classList.toggle('hidden');
+    document.querySelector("cloudXW").classList.toggle('hidden');
 }
 
 // Only show Women's Medium Cushion Neutral Shoes
@@ -326,6 +329,7 @@ function womensNeutralMax() {
     document.querySelector("#cloudMonsterW").classList.toggle('hidden');
     document.querySelector("#cloudStratusW").classList.toggle('hidden');
     document.querySelector("#triumphW").classList.toggle('hidden');
+    document.querySelector("levitateGTSW").classList.toggle('hidden');
 }
 
 // Only show Women's Light Cushion Stability Shoes
