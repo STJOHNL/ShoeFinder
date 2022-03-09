@@ -41,9 +41,9 @@ footer {
 /* ADDITIONAL STYLES
 /*******************************************/
 
-.hidden {
+/* .hidden {
      display: none;
-}
+} */
 
 #results {
      display: flex;
