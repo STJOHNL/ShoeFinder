@@ -55,8 +55,16 @@ footer {
 .shoeBlock {
      padding: 20px;
      margin: 10px;
-     border: 3px solid black;
-     width: 26%;
+     border: 3px solid lightgray;
+     border-radius: 10px;
+     box-shadow: 4px 4px 10px 2px #00000050;
+     width: 20%;
+     transition: all .2s ease-in-out;
+}
+
+.shoeBlock:hover {
+     border: 3px solid #ff6600;
+     transform: scale(1.1);
 }
 
 #results a {
@@ -75,11 +83,11 @@ footer {
      border-radius: 15px;
      max-width: 100%;
      height: auto;
+     margin-bottom: 15px;
 }
 
 .shoeBlock h4 {
      color: #222;
-     font-size: 2rem;
 }
 
 .shopBttn {
@@ -91,21 +99,44 @@ footer {
 
 .questionContainer {
      width: 50%;
-     border: 3px solid black;
      margin: auto;
      display: flex;
      justify-content: space-around;
 }
 
-.questionContainer button {
+button,
+.shopBttn {
      padding: 10px;
      margin: 10px;
      color: white;
      background-color: #ff6600;
      border: none;
-     border-radius: 10px;
+     border-radius: 55px;
+     box-shadow: 4px 4px 10px 2px #00000050;
+     transition: all .2s ease-in-out;
 }
 
-.questionContainer button:hover {
-     background-color: #222;
+button:hover,
+.shopBttn:hover {
+     background-color: #ff8533;
+     transform: scale(1.1);
+}
+
+.mainContainer {
+     border: 3px solid lightgray;
+     margin: 20px;
+     border-radius: 10px;
+     box-shadow: 4px 4px 10px 2px #00000050;
+}
+
+@media screen and (max-width: 600px) {
+     .shoeBlock{
+          width: 60%;
+     }
+}
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+     .shoeBlock{
+          width: 30%;
+     }
 }
