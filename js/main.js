@@ -1,6 +1,6 @@
 // Variables for selecting different questions
 
-const environment = document.querySelector('#location');
+const shoeUse = document.querySelector('#shoeUse');
 const mileage = document.querySelector('#mileage');
 const races = document.querySelector('#races');
 const arch = document.querySelector('#arch');
@@ -14,20 +14,26 @@ const gender = document.querySelector('#gender');
 
 let supportLevel = 0;
 
-// Location user intends to run
+// Users intended use for shoes
 
-document.querySelector('#road').addEventListener('click', roadShoes);
-document.querySelector('#trail').addEventListener('click', trailShoes);
+document.querySelector('#running').addEventListener('click', running);
+document.querySelector('#walking').addEventListener('click', walking);
+document.querySelector('#everyday').addEventListener('click', everyday);
 
 // functions below hide question once answered and progress to next question
 
-function roadShoes() {
-    environment.classList.add('hidden');
+function running() {
+    shoeUse.classList.add('hidden');
     mileage.classList.toggle('hidden');
 }
 
-function trailShoes() {
-    environment.classList.add('hidden');
+function walking() {
+    shoeUse.classList.add('hidden');
+    mileage.classList.toggle('hidden');
+}
+
+function everyday() {
+    shoeUse.classList.add('hidden');
     mileage.classList.toggle('hidden');
 }
 
