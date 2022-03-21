@@ -33,11 +33,13 @@ h1 {
 
 header {
      background-color: #222;
+     padding: 2%;
 }
 
 footer {
      background-color: #222;
      color: white;
+     padding: 2%;
 }
 
 button {
@@ -51,12 +53,13 @@ button {
      border-radius: 55px;
      padding: 15px 30px;
      transition: all .2s ease-in-out;
+     margin-top: 5%;
 }
 
 .restartBttn:hover {
      background-color: #ff8533;
      transform: scale(1.1);
-     
+    
 }
 /******************************************
 /* QUESTION STYLES
@@ -70,7 +73,7 @@ button {
 .mainContainer {
      background-color: white;
      border-radius: 20px;
-     margin: 5%;
+     margin: 2% 10%;
      padding: 2%;
      box-shadow: 4px 4px 10px 2px #00000050;
 }
