@@ -11,189 +11,272 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Shoe Finder</title>
 </head>
 
 <body>
+    <header>
     <h1>Shoe Finder</h1>
+    </header>
 
     <section id="shoeUse" class="mainContainer">
-        <h2>What will you be using your shoes for?</h2>
-        <section class="questionContainer">
-            <button id="running" type="button" value="running">Running</button>
-            <button id="walking" type="button" value="walking">Walking</button>
-            <button id="everyday" type="button" value="everyday">Everyday</button>
+        <section class="question">
+            <h2>What will you be using your shoes for?</h2>
+            <section class="answers">
+                <button id="running" type="button" value="running">
+                    <img src="images/answerPics/running.png" alt="">
+                    <p>Running</p>
+                </button>
+                <button id="walking" type="button" value="walking">
+                    <img src="images/answerPics/walking.png" alt="">
+                    <p>Walking</p>
+                </button>
+                <button id="everyday" type="button" value="everyday">
+                    <img src="images/answerPics/everyday.png" alt="">
+                    <p>Everyday</p>
+                </button>
+            </section>
         </section>
     </section>
 
     <section id="mileage" class="hidden mainContainer">
-        <h2>How many miles a week do you run/walk?</h2>
-        <section class="questionContainer">
-            <button id="underTen" type="button" value="underTen">0-10 Miles</button>
-            <button id="tenToTwenty" type="button" value="tenToTwenty">10-20 Miles</button>
-            <button id="moreThanThirty" type="button" value="moreThanThirty">30+ Miles</button>
+        <section class="question">
+            <h2>How many miles a week do you run/walk?</h2>
+            <img id="distanceImage" src="images/answerPics/distance.png" alt="">
+            <section class="answers distanceBttns">
+                <button id="underTen" type="button" value="underTen">0-10 Miles</button>
+                <button id="tenToTwenty" type="button" value="tenToTwenty">
+                    <img src="images/answerPics/" alt="">10-20 Miles</button>
+                <button id="moreThanThirty" type="button" value="moreThanThirty">
+                    <img src="images/answerPics/" alt="">30+ Miles</button>
+            </section>
         </section>
     </section>
 
     <!-- <section id="races" class="hidden mainContainer">
-        <h2>Any upcoming races?</h2>
-        <section class="questionContainer">
-            <input id="fiveK" type="checkbox" name="fiveK" value="fiveK">
-            <label for="fiveK" class="checkboxChild">5K</label>
-            <input id="tenK" type="checkbox" name="tenK" value="tenK">
-            <label for="tenK" class="checkboxChild">10K</label>
-            <input id="halfMarathon" type="checkbox" name="halfMarathon" value="halfMarathon">
-            <label for="halfMarathon" class="checkboxChild">Half Marathon</label>
-            <input id="marathon" type="checkbox" name="marathon" value="marathon">
-            <label for="marathon" class="checkboxChild">Marathon</label>
-            <input id="noRace" type="checkbox" name="noRace" value="noRace">
-            <label for="noRace" class="checkboxChild">No races planned</label>
-            <button id="raceSubmit" type="button" name="button">Next</button>
+        <section class="question">
+            <h2>Any upcoming races?</h2>
+            <section class="answers">
+                <input id="fiveK" type="checkbox" name="fiveK" value="fiveK">
+                <label for="fiveK" class="checkboxChild">5K</label>
+                <input id="tenK" type="checkbox" name="tenK" value="tenK">
+                <label for="tenK" class="checkboxChild">10K</label>
+                <input id="halfMarathon" type="checkbox" name="halfMarathon" value="halfMarathon">
+                <label for="halfMarathon" class="checkboxChild">Half Marathon</label>
+                <input id="marathon" type="checkbox" name="marathon" value="marathon">
+                <label for="marathon" class="checkboxChild">Marathon</label>
+                <input id="noRace" type="checkbox" name="noRace" value="noRace">
+                <label for="noRace" class="checkboxChild">No races planned</label>
+                <button id="raceSubmit" type="button" name="button">Next</button>
+            </section>
         </section>
     </section> -->
 
     <section id="arch" class="hidden mainContainer">
-        <h2>What arch type do you have?</h2>
-        <section class="questionContainer">
-            <button id="flatArch" type="button" value="flatArch">Flat</button>
-            <button id="normArch" type="button" value="normArch">Medium</button>
-            <button id="highArch" type="button" value="highArch">High</button>
+        <section class="question">
+            <h2>What arch type do you have?</h2>
+            <section class="answers">
+                <button id="flatArch" type="button" value="flatArch">
+                    <img src="images/answerPics/flat.png" alt="">
+                    <p>Flat</p>
+                </button>
+                <button id="normArch" type="button" value="normArch">
+                    <img src="images/answerPics/medium.png" alt="">
+                    <p>Medium</p></button>
+                <button id="highArch" type="button" value="highArch">
+                    <img src="images/answerPics/high.png" alt="">
+                    <p>High</p>
+            </button>
+            </section>
         </section>
     </section>
 
     <section id="legs" class="hidden mainContainer">
-        <h2>What is your leg shape?</h2>
-        <section class="questionContainer">
-            <button id="knockKnee" type="button" value="knockKnee">Knock Knees</button>
-            <button id="straightLegs" type="button" value="straightLegs">Straight</button>
-            <button id="bow" type="button" value="bow">Bow Legs</button>
+        <section class="question">
+            <h2>What is your leg shape?</h2>
+            <section class="answers">
+                <button id="knockKnee" type="button" value="knockKnee">
+                    <img src="images/answerPics/knockKnees.png" alt="">
+                    <p>Knock Knees</p>
+                    </button>
+                <button id="straightLegs" type="button" value="straightLegs">
+                    <img src="images/answerPics/straightLegs.png" alt="">
+                    <p>Straight</p>
+                    </button>
+                <button id="bow" type="button" value="bow">
+                    <img src="images/answerPics/bowLegs.png" alt="">
+                    <p>Bow Legs</p>
+                    </button>
+            </section>
         </section>
     </section>
 
     <section id="kneeTrack" class="hidden mainContainer">
-        <h2>How does your knee track in a shallow squat?</h2>
-        <section class="questionContainer">
-            <button id="rotateOut" type="button" value="rotateOut">Knees Rotate Outward</button>
-            <button id="straight" type="button" value="straight">Knee Tracks Straight</button>
-            <button id="rotateIn" type="button" value="rotateIn">Knee Tracks Inward</button>
+        <section class="question">
+            <h2>How does your knee track in a shallow squat?</h2>
+            <section class="answers">
+                <button id="rotateOut" type="button" value="rotateOut">
+                    <img src="images/answerPics/" alt="">
+                    <p>Knees Rotate Outward</p>
+                    </button>
+                <button id="straight" type="button" value="straight">
+                    <img src="images/answerPics/" alt="">
+                    <p>Knee Tracks Straight</p>
+                    </button>
+                <button id="rotateIn" type="button" value="rotateIn">
+                    <img src="images/answerPics/" alt="">
+                    <p>Knee Tracks Inward</p>
+                    </button>
+            </section>
         </section>
     </section>
 
     <!-- <section id="injury" class="hidden mainContainer">
-        <h2>Do you have any aches or pains?</h2>
-        <section class="questionContainer">
-            <input id="back" type="checkbox" name="back" value="back">
-            <label for="back">Back</label>
-            <input id="hips" type="checkbox" name="hips" value="hips">
-            <label for="hips">Hips</label>
-            <input id="knees" type="checkbox" name="knees" value="knees">
-            <label for="knees">Knees</label>
-            <input id="calves" type="checkbox" name="calves" value="calves">
-            <label for="calves">Calves</label>
-            <input id="shins" type="checkbox" name="shins" value="shins">
-            <label for="shins">Shins</label>
-            <input id="achilles" type="checkbox" name="achilles" value="achilles">
-            <label for="achilles">Achilles/Ankle</label>
-            <input id="feet" type="checkbox" name="feet" value="feet">
-            <label for="feet">Feet</label>
-            <input id="bunions" type="checkbox" name="bunions" value="bunions">
-            <label for="bunions">Bunions</label>
-            <input id="plantar" type="checkbox" name="plantar" value="plantar">
-            <label for="plantar">Plantar Fasciitis</label>
-            <input id="noInjury" type="checkbox" name="noInjury" value="noInjury">
-            <label for="noInjury">So far, so good!</label>
-            <button id="injurySubmit" type="button" name="button">Next</button>
+        <section class="question">
+            <h2>Do you have any aches or pains?</h2>
+            <section class="answers">
+                <input id="back" type="checkbox" name="back" value="back">
+                <label for="back">Back</label>
+                <input id="hips" type="checkbox" name="hips" value="hips">
+                <label for="hips">Hips</label>
+                <input id="knees" type="checkbox" name="knees" value="knees">
+                <label for="knees">Knees</label>
+                <input id="calves" type="checkbox" name="calves" value="calves">
+                <label for="calves">Calves</label>
+                <input id="shins" type="checkbox" name="shins" value="shins">
+                <label for="shins">Shins</label>
+                <input id="achilles" type="checkbox" name="achilles" value="achilles">
+                <label for="achilles">Achilles/Ankle</label>
+                <input id="feet" type="checkbox" name="feet" value="feet">
+                <label for="feet">Feet</label>
+                <input id="bunions" type="checkbox" name="bunions" value="bunions">
+                <label for="bunions">Bunions</label>
+                <input id="plantar" type="checkbox" name="plantar" value="plantar">
+                <label for="plantar">Plantar Fasciitis</label>
+                <input id="noInjury" type="checkbox" name="noInjury" value="noInjury">
+                <label for="noInjury">So far, so good!</label>
+                <button id="injurySubmit" type="button" name="button">Next</button>
+            </section>
         </section>
     </section> -->
 
     <section id="cushion" class="hidden mainContainer">
-        <h2>What is your preferred cushion level?</h2>
-        <section class="questionContainer">
-            <button id="lightFast" type="button" value="lightFast">Light & Fast</button>
-            <button id="midCushion" type="button" value="midCushion">Medium Cushion</button>
-            <button id="maxCushion" type="button" value="maxCushion">Max Cushion</button>
+        <section class="question">
+            <h2>What is your preferred cushion level?</h2>
+            <section class="answers">
+                <button id="lightFast" type="button" value="lightFast">
+                    <img src="images/answerPics/lightCushion.png" alt="">
+                    <p>Light & Fast</p>
+                    </button>
+                <button id="midCushion" type="button" value="midCushion">
+                    <img src="images/answerPics/mediumCushion.png" alt="">
+                    <p>Medium Cushion</p>
+                    </button>
+                <button id="maxCushion" type="button" value="maxCushion">
+                    <img src="images/answerPics/maxCushion.png" alt="">
+                    <p>Max Cushion</p>
+                    </button>
+            </section>
         </section>
     </section>
 
     <!-- <section id="brand" class="hidden mainContainer">
-        <h2>What brands do you like?</h2>
-        <section class="questionContainer">
-            <input id="altra" type="checkbox" name="altra" value="altra">
-            <label for="altra">Altra</label>
-            <input id="asics" type="checkbox" name="asics" value="asics">
-            <label for="asics">Asics</label>
-            <input id="brooks" type="checkbox" name="brooks" value="brooks">
-            <label for="brooks">Brooks</label>
-            <input id="hoka" type="checkbox" name="hoka" value="hoka">
-            <label for="hoka">HOKA One One</label>
-            <input id="mizuno" type="checkbox" name="mizuno" value="mizuno">
-            <label for="mizuno">Mizuno</label>
-            <input id="newBalance" type="checkbox" name="newBalance" value="newBalance">
-            <label for="newBalance">New Balance</label>
-            <input id="nike" type="checkbox" name="nike" value="nike">
-            <label for="nike">Nike</label>
-            <input id="onRunning" type="checkbox" name="onRunning" value="onRunning">
-            <label for="onRunning">ON</label>
-            <input id="saucony" type="checkbox" name="saucony" value="saucony">
-            <label for="saucony">Saucony</label>
-            <input id="notPicky" type="checkbox" name="notPicky" value="notPicky">
-            <label for="notPicky">Show me everything!</label>
-            <button id="brandSubmit" type="button" name="button">Next</button>
+        <section class="question">
+            <h2>What brands do you like?</h2>
+            <section class="answers">
+                <input id="altra" type="checkbox" name="altra" value="altra">
+                <label for="altra">Altra</label>
+                <input id="asics" type="checkbox" name="asics" value="asics">
+                <label for="asics">Asics</label>
+                <input id="brooks" type="checkbox" name="brooks" value="brooks">
+                <label for="brooks">Brooks</label>
+                <input id="hoka" type="checkbox" name="hoka" value="hoka">
+                <label for="hoka">HOKA One One</label>
+                <input id="mizuno" type="checkbox" name="mizuno" value="mizuno">
+                <label for="mizuno">Mizuno</label>
+                <input id="newBalance" type="checkbox" name="newBalance" value="newBalance">
+                <label for="newBalance">New Balance</label>
+                <input id="nike" type="checkbox" name="nike" value="nike">
+                <label for="nike">Nike</label>
+                <input id="onRunning" type="checkbox" name="onRunning" value="onRunning">
+                <label for="onRunning">ON</label>
+                <input id="saucony" type="checkbox" name="saucony" value="saucony">
+                <label for="saucony">Saucony</label>
+                <input id="notPicky" type="checkbox" name="notPicky" value="notPicky">
+                <label for="notPicky">Show me everything!</label>
+                <button id="brandSubmit" type="button" name="button">Next</button>
+            </section>
         </section>
     </section> -->
 
     <section id="gender" class="hidden mainContainer">
-        <h2>What gender shoe are you looking for?</h2>
-        <section class="questionContainer">
-            <button id="womensShoes" type="button" value="womensShoes">Women's Shoes</button>
-            <button id="mensShoes" type="button" value="mensShoes">Men's Shoes</button>
+        <section class="question">
+            <h2>What gender shoe are you looking for?</h2>
+            <section class="answers">
+                <button id="womensShoes" type="button" value="womensShoes">
+                    <img src="images/answerPics/womens.png" alt="">
+                    <p>Women's Shoes</p>
+                    </button>
+                <button id="mensShoes" type="button" value="mensShoes">
+                    <img src="images/answerPics/mens.png" alt="">
+                    <p>Men's Shoes</p>
+                    </button>
+            </section>
         </section>
     </section>
 
     <!-- <section class="hidden mainContainer">
-        <h2>What is your shoe size?</h2>
-        <select name="womensSize" id="womensShoeSize">
-            <option value="5">5</option>
-            <option value="5.5">5.5</option>
-            <option value="6">6</option>
-            <option value="6.5">6.5</option>
-            <option value="7">7</option>
-            <option value="7.5">7.5</option>
-            <option selected="selected" value="8">8</option>
-            <option value="8.5">8.5</option>
-            <option value="9">9</option>
-            <option value="9.5">9.5</option>
-            <option value="10">10</option>
-            <option value="10.5">10.5</option>
-            <option value="11">11</option>
-            <option value="11.5">11.5</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-        </select>
+        <section class="question">
+            <h2>What is your shoe size?</h2>
+            <select name="womensSize" id="womensShoeSize">
+                <option value="5">5</option>
+                <option value="5.5">5.5</option>
+                <option value="6">6</option>
+                <option value="6.5">6.5</option>
+                <option value="7">7</option>
+                <option value="7.5">7.5</option>
+                <option selected="selected" value="8">8</option>
+                <option value="8.5">8.5</option>
+                <option value="9">9</option>
+                <option value="9.5">9.5</option>
+                <option value="10">10</option>
+                <option value="10.5">10.5</option>
+                <option value="11">11</option>
+                <option value="11.5">11.5</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+            </select>
+        </section>
     </section>
 
     <section class="hidden mainContainer">
-        <h2>What is your shoe size?</h2>
-        <select name="mensSize" id="mensShoeSize">
-            <option value="7">7</option>
-            <option value="7.5">7.5</option>
-            <option value="8">8</option>
-            <option value="8.5">8.5</option>
-            <option value="9">9</option>
-            <option value="9.5">9.5</option>
-            <option selected="selected" value="10">10</option>
-            <option value="10.5">10.5</option>
-            <option value="11">11</option>
-            <option value="11.5">11.5</option>
-            <option value="12">12</option>
-            <option value="12.5">12.5</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-        </select>
+        <section class="question">
+            <h2>What is your shoe size?</h2>
+            <select name="mensSize" id="mensShoeSize">
+                <option value="7">7</option>
+                <option value="7.5">7.5</option>
+                <option value="8">8</option>
+                <option value="8.5">8.5</option>
+                <option value="9">9</option>
+                <option value="9.5">9.5</option>
+                <option selected="selected" value="10">10</option>
+                <option value="10.5">10.5</option>
+                <option value="11">11</option>
+                <option value="11.5">11.5</option>
+                <option value="12">12</option>
+                <option value="12.5">12.5</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+            </select>
+        </section>
     </section> -->
+
+    <section>
+        <button class="restartBttn" type="button" value="restartBttn">Restart</button>
+    </section>
+
     <section id="results" class="hidden">
 
         <!-- Men's Shoes -->
@@ -204,7 +287,7 @@
         <section id="torinM" class="altra neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1023095/Altra/Men-s-Torin-5" target="_blank">
                 <h4>Altra Torin 5</h4>
-                <img src="media/mTorin5.png" alt="">
+                <img src="images/shoes/mTorin5.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1023095/Altra/Men-s-Torin-5">Shop Now</a>
             </a>
@@ -212,7 +295,7 @@
         <section id="escalanteM" class="altra neutralMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1002562/Altra/Men-s-Escalante-2-5" target="_blank">
                 <h4>Altra Escalante 2.5</h4>
-                <img src="media/mEscalante2.5.png" alt="">
+                <img src="images/shoes/mEscalante2.5.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1002562/Altra/Men-s-Escalante-2-5">Shop Now</a>
             </a>
@@ -220,7 +303,7 @@
         <section id="riveraM" class="altra neutralMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1002717/Altra/Men-s-Rivera" target="_blank">
                 <h4>Altra Rivera</h4>
-                <img src="media/mRivera.png" alt="">
+                <img src="images/shoes/mRivera.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1002717/Altra/Men-s-Rivera">Shop Now</a>
             </a>
@@ -228,7 +311,7 @@
         <section id="provisionM" class="altra stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1066422/Altra/Men-s-Provision-6" target="_blank">
                 <h4>Altra Provision</h4>
-                <img src="media/mProvision6.png" alt="">
+                <img src="images/shoes/mProvision6.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1066422/Altra/Men-s-Provision-6">Shop Now</a>
             </a>
@@ -237,7 +320,7 @@
         <section id="nimbusM" class="asics neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1093823/ASICS/Men-s-Nimbus-24" target="_blank">
                 <h4>Asics Gel-Nimbus 24</h4>
-                <img src="media/mNimbus24.png" alt="">
+                <img src="images/shoes/mNimbus24.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1093823/ASICS/Men-s-Nimbus-24">Shop Now</a>
             </a>
@@ -245,7 +328,7 @@
         <section id="evorideM" class="asics neutralMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1028730/ASICS/Men-s-EvoRide-2" target="_blank">
                 <h4>Asics EvoRide 2</h4>
-                <img src="media/mEvoRide2.png" alt="">
+                <img src="images/shoes/mEvoRide2.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1028730/ASICS/Men-s-EvoRide-2">Shop Now</a>
             </a>
@@ -253,7 +336,7 @@
         <section id="kayanoM" class="asics stabilityMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1028747/ASICS/Men-s-Kayano-28" target="_blank">
                 <h4>Asics Gel-Kayano 28</h4>
-                <img src="media/mKayano28.png" alt="">
+                <img src="images/shoes/mKayano28.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1028747/ASICS/Men-s-Kayano-28">Shop Now</a>
             </a>
@@ -261,7 +344,7 @@
         <section id="gtTwoThousandM" class="asics stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1058509/ASICS/Men-s-GT-2000-10" target="_blank">
                 <h4>Asics GT-2000 10</h4>
-                <img src="media/mGT200010.png" alt="">
+                <img src="images/shoes/mGT200010.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1058509/ASICS/Men-s-GT-2000-10">Shop Now</a>
             </a>
@@ -270,14 +353,14 @@
         <section id="launchM" class="brooks neutralLight shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>Brooks Launch 9</h4>
-                <img src="media/mLaunch9.png" alt="">
+                <img src="images/shoes/mLaunch9.png" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="hyperionTempo" class="brooks lightNeutral shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1002001/Brooks/Men-s-Hyperion-Tempo" target="_blank">
                 <h4>Brooks Hyperion Tempo</h4>
-                <img src="media/mHyperionTempo.png" alt="">
+                <img src="images/shoes/mHyperionTempo.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1002001/Brooks/Men-s-Hyperion-Tempo">Shop Now</a>
             </a>
@@ -285,7 +368,7 @@
         <section id="hyperionEliteM" class="brooks lightNeutral shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1052796/Brooks/Unisex-Hyperion-Elite-2" target="_blank">
                 <h4>Brooks Hyperion Elite 2</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1052796/Brooks/Unisex-Hyperion-Elite-2">Shop Now</a>
             </a>
@@ -293,7 +376,7 @@
         <section id="glycerinM" class="brooks neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1002207/Brooks/Men-s-Glycerin-19" target="_blank">
                 <h4>Brooks Glycerin 19</h4>
-                <img src="media/mGlycerin19.png" alt="">
+                <img src="images/shoes/mGlycerin19.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1002207/Brooks/Men-s-Glycerin-19">Shop Now</a>
             </a>
@@ -301,7 +384,7 @@
         <section id="levitateM" class="brooks neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1028811/Brooks/Men-s-Levitate-5" target="_blank">
                 <h4>Brooks Levitate 5</h4>
-                <img src="media/mLevitate5.png" alt="">
+                <img src="images/shoes/mLevitate5.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1028811/Brooks/Men-s-Levitate-5">Shop Now</a>
             </a>
@@ -309,7 +392,7 @@
         <section id="ghostM" class="brooks neutralMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1016378/Brooks/Men-s-Ghost-14" target="_blank">
                 <h4>Brooks Ghost 14</h4>
-                <img src="media/mGhost14.png" alt="">
+                <img src="images/shoes/mGhost14.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1016378/Brooks/Men-s-Ghost-14">Shop Now</a>
             </a>
@@ -317,7 +400,7 @@
         <section id="traceM" class="brooks neutralMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1026981/Brooks/Men-s-Trace" target="_blank">
                 <h4>Brooks Trace</h4>
-                <img src="media/mTrace.png" alt="">
+                <img src="images/shoes/mTrace.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1026981/Brooks/Men-s-Trace">Shop Now</a>
             </a>
@@ -325,14 +408,14 @@
         <section id="launchGTSM" class="brooks stabilityLight shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>Brooks Launch GTS 9</h4>
-                <img src="media/mLaunchGTS9.png" alt="">
+                <img src="images/shoes/mLaunchGTS9.png" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="glycerinGTSM" class="brooks stabilityMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1002197/Brooks/Men-s-Glycerin-GTS-19" target="_blank">
                 <h4>Brooks Glycerin GTS 19</h4>
-                <img src="media/mGlycerinGTS19.png" alt="">
+                <img src="images/shoes/mGlycerinGTS19.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1002197/Brooks/Men-s-Glycerin-GTS-19">Shop Now</a>
             </a>
@@ -340,7 +423,7 @@
         <section id="levitateGTSM" class="brooks stabilityMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1028813/Brooks/Men-s-Levitate-GTS-5" target="_blank">
                 <h4>Brooks Levitate GTS 5</h4>
-                <img src="media/mLevitateGTS5.png" alt="">
+                <img src="images/shoes/mLevitateGTS5.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1028813/Brooks/Men-s-Levitate-GTS-5">Shop Now</a>
             </a>
@@ -348,7 +431,7 @@
         <section id="adrenalineM" class="brooks stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1064211/Brooks/Men-s-Adrenaline-GTS-22" target="_blank">
                 <h4>Brooks Adrenaline GTS 22</h4>
-                <img src="media/mAdrenaline22.png" alt="">
+                <img src="images/shoes/mAdrenaline22.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1064211/Brooks/Men-s-Adrenaline-GTS-22">Shop Now</a>
             </a>
@@ -357,7 +440,7 @@
         <section id="rinconM" class="hoka neutralLight shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1028162/Hoka-One-One/Men-s-Rincon-3" target="_blank">
                 <h4>HOKA One One Rincon 3</h4>
-                <img src="media/mRincon3.png" alt="">
+                <img src="images/shoes/mRincon3.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1028162/Hoka-One-One/Men-s-Rincon-3">Shop Now</a>
             </a>
@@ -365,14 +448,14 @@
         <section id="carbonXM" class="hoka neutralLight shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>HOKA One One Carbon X 2</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="machM" class="hoka neutralLight shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027138/Hoka-One-One/Men-s-Mach-4" target="_blank">
                 <h4>HOKA One One Mach 4</h4>
-                <img src="media/mMach4.png" alt="">
+                <img src="images/shoes/mMach4.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027138/Hoka-One-One/Men-s-Mach-4">Shop Now</a>
             </a>
@@ -380,7 +463,7 @@
         <section id="bondiM" class="hoka neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1003969/Hoka-One-One/Men-s-Bondi-7" target="_blank">
                 <h4>HOKA One One Bondi 7</h4>
-                <img src="media/mBondi7.png" alt="">
+                <img src="images/shoes/mBondi7.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1003969/Hoka-One-One/Men-s-Bondi-7">Shop Now</a>
             </a>
@@ -388,7 +471,7 @@
         <section id="cliftonM" class="hoka neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027102/Hoka-One-One/Men-s-Clifton-8" target="_blank">
                 <h4>HOKA One One Clifton 8</h4>
-                <img src="media/mClifton8.png" alt="">
+                <img src="images/shoes/mClifton8.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027102/Hoka-One-One/Men-s-Clifton-8">Shop Now</a>
             </a>
@@ -396,7 +479,7 @@
         <section id="kawanaM" class="hoka neutralMid hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1153753/Hoka-One-One/Men-s-Kawana" target="_blank">
                 <h4>HOKA One One Kawana</h4>
-                <img src="media/mKawana.png" alt="">
+                <img src="images/shoes/mKawana.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1153753/Hoka-One-One/Men-s-Kawana">Shop Now</a>
             </a>
@@ -404,7 +487,7 @@
         <section id="gaviotaM" class="hoka stabilityMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1004038/Hoka-One-One/Men-s-Gaviota-3" target="_blank">
                 <h4>HOKA One One Gaviota 4</h4>
-                <img src="media/mGaviota3.png" alt="">
+                <img src="images/shoes/mGaviota3.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1004038/Hoka-One-One/Men-s-Gaviota-3">Shop Now</a>
             </a>
@@ -412,7 +495,7 @@
         <section id="arahiM" class="hoka stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1156109/Hoka-One-One/Men-s-Arahi-6" target="_blank">
                 <h4>HOKA One One Arahi 6</h4>
-                <img src="media/mArahi6.png" alt="">
+                <img src="images/shoes/mArahi6.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1156109/Hoka-One-One/Men-s-Arahi-6">Shop Now</a>
             </a>
@@ -421,7 +504,7 @@
         <section id="riderM" class="mizuno neutralMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027338/Mizuno/Men-s-Wave-Rider-25" target="_blank">
                 <h4>Mizuno Wave Rider 25</h4>
-                <img src="media/mWaveRider25.png" alt="">
+                <img src="images/shoes/mWaveRider25.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027338/Mizuno/Men-s-Wave-Rider-25">Shop Now</a>
             </a>
@@ -429,7 +512,7 @@
         <section id="horizonM" class="mizuno stabilityMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1002867/Mizuno/Men-s-Wave-Horizon-5" target="_blank">
                 <h4>Mizuno Wave Horizon 5</h4>
-                <img src="media/mWaveHorizon5.png" alt="">
+                <img src="images/shoes/mWaveHorizon5.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1002867/Mizuno/Men-s-Wave-Horizon-5">Shop Now</a>
             </a>
@@ -437,7 +520,7 @@
         <section id="inspireM" class="mizuno stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1002790/Mizuno/Men-s-Wave-Inspire-17" target="_blank">
                 <h4>Mizuno Wave Inspire 17</h4>
-                <img src="media/mWaveInspire17.png" alt="">
+                <img src="images/shoes/mWaveInspire17.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1002790/Mizuno/Men-s-Wave-Inspire-17">Shop Now</a>
             </a>
@@ -446,7 +529,7 @@
         <section id="tenEightyM" class="newBalance neutralMax hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1026733/New-Balance/Men-s-Fresh-Foam-1080v11" target="_blank">
                 <h4>New Balance 1080v11</h4>
-                <img src="media/m1080v11.png" alt="">
+                <img src="images/shoes/m1080v11.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1026733/New-Balance/Men-s-Fresh-Foam-1080v11">Shop Now</a>
             </a>
@@ -454,7 +537,7 @@
         <section id="eightEightyM" class="newBalance neutralMid hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027008/New-Balance/Men-s-880v11" target="_blank">
                 <h4>New Balance 880v11</h4>
-                <img src="media/m880v11.png" alt="">
+                <img src="images/shoes/m880v11.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027008/New-Balance/Men-s-880v11">Shop Now</a>
             </a>
@@ -462,7 +545,7 @@
         <section id="vongoM" class="newBalance stabilityMax hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1031264/New-Balance/Men-s-Vongo-v5" target="_blank">
                 <h4>New Balance Vongo v5</h4>
-                <img src="media/mVongo5.png" alt="">
+                <img src="images/shoes/mVongo5.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1031264/New-Balance/Men-s-Vongo-v5">Shop Now</a>
             </a>
@@ -470,7 +553,7 @@
         <section id="eightSixtyM" class="newBalance stabilityMid hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1047635/New-Balance/Men-s-860v12" target="_blank">
                 <h4>New Balance 860v12</h4>
-                <img src="media/m860v12.png" alt="">
+                <img src="images/shoes/m860v12.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1047635/New-Balance/Men-s-860v12">Shop Now</a>
             </a>
@@ -479,7 +562,7 @@
         <section id="vomeroM" class="nike neutralMax hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1071634/Nike/Men-s-Vomero-16" target="_blank">
                 <h4>Nike Vomero</h4>
-                <img src="media/mVomero16.png" alt=""></h4>
+                <img src="images/shoes/mVomero16.png" alt=""></h4>
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1071634/Nike/Men-s-Vomero-16">Shop Now</a>
             </a>
@@ -488,7 +571,7 @@
         <section id="pegasusM" class="nike neutralMid hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027689/Nike/Men-s-Pegasus-38" target="_blank">
                 <h4>Nike Pegasus 38</h4>
-                <img src="media/mPegasus38.png" alt="">
+                <img src="images/shoes/mPegasus38.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027689/Nike/Men-s-Pegasus-38">Shop Now</a>
             </a>
@@ -496,7 +579,7 @@
         <section id="zoomFlyM" class="nike neutralMid hidden shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>Nike Zoom Fly</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
@@ -504,7 +587,7 @@
         <section id="cloudXM" class="onRunning neutralLight hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1021930/On/Men-s-Cloud-X" target="_blank">
                 <h4>On Cloud X</h4>
-                <img src="media/mCloudX.png" alt="">
+                <img src="images/shoes/mCloudX.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1021930/On/Men-s-Cloud-X">Shop Now</a>
             </a>
@@ -512,14 +595,14 @@
         <section id="cloudMonsterM" class="onRunning neutralMax hidden shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>On CloudMonster</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="cloudStratusM" class="onRunning neutralMax hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1031947/On/Men-s-Cloudstratus" target="_blank">
                 <h4>On CloudStratus</h4>
-                <img src="media/mCloudstratus.png" alt="">
+                <img src="images/shoes/mCloudstratus.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1031947/On/Men-s-Cloudstratus">Shop Now</a>
             </a>
@@ -527,7 +610,7 @@
         <section id="cloudflowM" class="onRunning neutralMid hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027294/On/Men-s-Cloudflow-3" target="_blank">
                 <h4>On Cloudflow</h4>
-                <img src="media/mCloudflow.png" alt="">
+                <img src="images/shoes/mCloudflow.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027294/On/Men-s-Cloudflow-3">Shop Now</a>
             </a>
@@ -535,7 +618,7 @@
         <section id="cloudgoM" class="onRunning neutralMid hidden shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>On Cloudgo</h4>
-                <h4> <img src="media/" alt=""></h4>
+                <h4> <img src="images/shoes/" alt=""></h4>
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
@@ -543,7 +626,7 @@
         <section id="cloudflyerM" class="onRunning stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1021928/On/Men-s-Cloudflyer" target="_blank">
                 <h4>On Cloudflyer</h4>
-                <img src="media/mCloudflyer.png" alt="">
+                <img src="images/shoes/mCloudflyer.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1021928/On/Men-s-Cloudflyer">Shop Now</a>
             </a>
@@ -552,14 +635,14 @@
         <section id="kinvaraM" class="saucony neutralLight shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>Saucony Kinvara 14</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="speedM" class="saucony neutralLight shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027105/Saucony/Men-s-Endorphin-Speed-2" target="_blank">
                 <h4>Saucony Endorphin Speed 2</h4>
-                <img src="media/mSpeed2.png" alt="">
+                <img src="images/shoes/mSpeed2.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027105/Saucony/Men-s-Endorphin-Speed-2">Shop Now</a>
             </a>
@@ -567,7 +650,7 @@
         <section id="triumphM" class="saucony neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027198/Saucony/Men-s-Triumph-19" target="_blank">
                 <h4>Saucony Triumph 19</h4>
-                <img src="media/mTriumph19.png" alt="">
+                <img src="images/shoes/mTriumph19.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027198/Saucony/Men-s-Triumph-19">Shop Now</a>
             </a>
@@ -575,14 +658,14 @@
         <section id="rideM" class="saucony neutralMid shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>Saucony Ride 15</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="shiftM" class="saucony stabilityMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027114/Saucony/Men-s-Endorphin-Shift-2" target="_blank">
                 <h4>Saucony Endorphin Shift 2</h4>
-                <img src="media/mShift2.png" alt="">
+                <img src="images/shoes/mShift2.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027114/Saucony/Men-s-Endorphin-Shift-2">Shop Now</a>
             </a>
@@ -590,14 +673,14 @@
         <section id="guideM" class="saucony stabilityMid shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>Saucony Guide 15</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="omniM" class="saucony stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027194/Saucony/Men-s-Omni-20" target="_blank">
                 <h4>Saucony Omni 20</h4>
-                <img src="media/mOmni20.png" alt="">
+                <img src="images/shoes/mOmni20.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027194/Saucony/Men-s-Omni-20">Shop Now</a>
             </a>
@@ -606,11 +689,12 @@
         <!-- Women's Shoes -->
 
         <h2 id="displayWomensResult"></h2>
+        
         <!-- Altra -->
         <section id="torinW" class="altra neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027104/Altra/Women-s-Torin-5" target="_blank">
                 <h4>Altra Torin 5</h4>
-                <img src="media/wTorin5.png" alt="">
+                <img src="images/shoes/wTorin5.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027104/Altra/Women-s-Torin-5">Shop Now</a>
             </a>
@@ -618,7 +702,7 @@
         <section id="escalanteW" class="altra neutralMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1002587/Altra/Women-s-Escalante-2-5" target="_blank">
                 <h4>Altra Escalante 2.5</h4>
-                <img src="media/wEscalante2.5.png" alt="">
+                <img src="images/shoes/wEscalante2.5.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1002587/Altra/Women-s-Escalante-2-5">Shop Now</a>
             </a>
@@ -626,7 +710,7 @@
         <section id="riveraW" class="altra neutralMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1002719/Altra/Women-s-Rivera" target="_blank">
                 <h4>Altra Rivera</h4>
-                <img src="media/wRivera.png" alt="">
+                <img src="images/shoes/wRivera.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1002719/Altra/Women-s-Rivera">Shop Now</a>
             </a>
@@ -634,7 +718,7 @@
         <section id="provisionW" class="altra stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1066424/Altra/Women-s-Provision-6" target="_blank">
                 <h4>Altra Provision</h4>
-                <img src="media/wProvision6.png" alt="">
+                <img src="images/shoes/wProvision6.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1066424/Altra/Women-s-Provision-6">Shop Now</a>
             </a>
@@ -643,7 +727,7 @@
         <section id="nimbusW" class="asics neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1093822/ASICS/Women-s-Nimbus-24" target="_blank">
                 <h4>Asics Gel-Nimbus 24</h4>
-                <img src="media/wNimbus24.png" alt="">
+                <img src="images/shoes/wNimbus24.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1093822/ASICS/Women-s-Nimbus-24">Shop Now</a>
             </a>
@@ -651,7 +735,7 @@
         <section id="evorideW" class="asics neutralMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1028731/ASICS/Women-s-EvoRide-2" target="_blank">
                 <h4>Asics EvoRide 2</h4>
-                <img src="media/wEvoRide2.png" alt="">
+                <img src="images/shoes/wEvoRide2.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1028731/ASICS/Women-s-EvoRide-2">Shop Now</a>
             </a>
@@ -659,7 +743,7 @@
         <section id="kayanoW" class="asics stabilityMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1120778/ASICS/Women-s-Kayano-28" target="_blank">
                 <h4>Asics Gel-Kayano 28</h4>
-                <img src="media/wKayano28.png" alt="">
+                <img src="images/shoes/wKayano28.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1120778/ASICS/Women-s-Kayano-28">Shop Now</a>
             </a>
@@ -667,7 +751,7 @@
         <section id="gtTwoThousandW" class="asics stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1058406/ASICS/Women-s-GT-2000-10" target="_blank">
                 <h4>Asics GT-2000 10</h4>
-                <img src="media/wGT200010.png" alt="">
+                <img src="images/shoes/wGT200010.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1058406/ASICS/Women-s-GT-2000-10">Shop Now</a>
             </a>
@@ -676,14 +760,14 @@
         <section id="launchW" class="brooks neutralLight shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>Brooks Launch 9</h4>
-                <img src="media/wlaunch9.png" alt="">
+                <img src="images/shoes/wlaunch9.png" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="hyperionTempoW" class="brooks lightNeutral shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1002013/Brooks/Women-s-Hyperion-Tempo" target="_blank">
                 <h4>Brooks Hyperion Tempo</h4>
-                <img src="media/wHyperionTempo.png" alt="">
+                <img src="images/shoes/wHyperionTempo.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1002013/Brooks/Women-s-Hyperion-Tempo">Shop Now</a>
             </a>
@@ -691,7 +775,7 @@
         <section id="hyperionEliteW" class="brooks lightNeutral shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1052796/Brooks/Unisex-Hyperion-Elite-2" target="_blank">
                 <h4>Brooks Hyperion Elite 2</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1052796/Brooks/Unisex-Hyperion-Elite-2">Shop Now</a>
             </a>
@@ -699,7 +783,7 @@
         <section id="glycerinW" class="brooks neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1002208/Brooks/Women-s-Glycerin-19" target="_blank">
                 <h4>Brooks Glycerin 19</h4>
-                <img src="media/wGlycerin19.png" alt="">
+                <img src="images/shoes/wGlycerin19.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1002208/Brooks/Women-s-Glycerin-19">Shop Now</a>
             </a>
@@ -707,7 +791,7 @@
         <section id="levitateW" class="brooks neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1028809/Brooks/Women-s-Levitate-5" target="_blank">
                 <h4>Brooks Levitate 5</h4>
-                <img src="media/wLevitate5.png" alt="">
+                <img src="images/shoes/wLevitate5.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1028809/Brooks/Women-s-Levitate-5">Shop Now</a>
             </a>
@@ -715,7 +799,7 @@
         <section id="ghostW" class="brooks neutralMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1016380/Brooks/Women-s-Ghost-14" target="_blank">
                 <h4>Brooks Ghost 14</h4>
-                <img src="media/wGhost14.png" alt="">
+                <img src="images/shoes/wGhost14.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1016380/Brooks/Women-s-Ghost-14">Shop Now</a>
             </a>
@@ -723,7 +807,7 @@
         <section id="traceW" class="brooks neutralMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1026982/Brooks/Women-s-Trace" target="_blank">
                 <h4>Brooks Trace</h4>
-                <img src="media/wTrace.png" alt="">
+                <img src="images/shoes/wTrace.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1026982/Brooks/Women-s-Trace">Shop Now</a>
             </a>
@@ -731,21 +815,21 @@
         <section id="launchGTSW" class="brooks stabilityLight shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>Brooks Launch GTS 9</h4>
-                <img src="media/wLaunchGTS9.png" alt="">
+                <img src="images/shoes/wLaunchGTS9.png" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="glycerinGTSW" class="brooks stabilityMax shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>Brooks Glycerin GTS 19</h4>
-                <img src="media/wGlycerinGTS19.png" alt="">
+                <img src="images/shoes/wGlycerinGTS19.png" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="levitateGTSW" class="brooks stabilityMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1028815/Brooks/Women-s-Levitate-GTS-5" target="_blank">
                 <h4>Brooks Levitate GTS 5</h4>
-                <img src="media/wLevitateGTS5.png" alt="">
+                <img src="images/shoes/wLevitateGTS5.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1028815/Brooks/Women-s-Levitate-GTS-5">Shop Now</a>
             </a>
@@ -753,7 +837,7 @@
         <section id="adrenalineW" class="brooks stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1064214/Brooks/Women-s-Adrenaline-GTS-22" target="_blank">
                 <h4>Brooks Adrenaline GTS 22</h4>
-                <img src="media/wAdrenaline22.png" alt="">
+                <img src="images/shoes/wAdrenaline22.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1064214/Brooks/Women-s-Adrenaline-GTS-22">Shop Now</a>
             </a>
@@ -762,7 +846,7 @@
         <section id="rinconW" class="hoka neutralLight shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1028164/Hoka-One-One/Women-s-Rincon-3" target="_blank">
                 <h4>HOKA One One Rincon 3</h4>
-                <img src="media/wRincon3.png" alt="">
+                <img src="images/shoes/wRincon3.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1028164/Hoka-One-One/Women-s-Rincon-3">Shop Now</a>
             </a>
@@ -770,14 +854,14 @@
         <section id="carbonXW" class="hoka neutralLight shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>HOKA One One Carbon X 2</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="machW" class="hoka neutralLight shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1031938/Hoka-One-One/Women-s-Mach-4" target="_blank">
                 <h4>HOKA One One Mach 4</h4>
-                <img src="media/wMach4.png" alt="">
+                <img src="images/shoes/wMach4.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1031938/Hoka-One-One/Women-s-Mach-4">Shop Now</a>
             </a>
@@ -785,7 +869,7 @@
         <section id="bondiW" class="hoka neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1003975/Hoka-One-One/Women-s-Bondi-7" target="_blank">
                 <h4>HOKA One One Bondi 7</h4>
-                <img src="media/wBondi7.png" alt="">
+                <img src="images/shoes/wBondi7.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1003975/Hoka-One-One/Women-s-Bondi-7">Shop Now</a>
             </a>
@@ -793,7 +877,7 @@
         <section id="cliftonW" class="hoka neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027101/Hoka-One-One/Women-s-Clifton-8" target="_blank">
                 <h4>HOKA One One Clifton 8</h4>
-                <img src="media/wClifton8.png" alt="">
+                <img src="images/shoes/wClifton8.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027101/Hoka-One-One/Women-s-Clifton-8">Shop Now</a>
             </a>
@@ -801,7 +885,7 @@
         <section id="kawanaW" class="hoka neutralMid hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1153752/Hoka-One-One/Women-s-Kawana" target="_blank">
                 <h4>HOKA One One Kawana</h4>
-                <img src="media/wKawana.png" alt="">
+                <img src="images/shoes/wKawana.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1153752/Hoka-One-One/Women-s-Kawana">Shop Now</a>
             </a>
@@ -809,7 +893,7 @@
         <section id="gaviotaW" class="hoka stabilityMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1004035/Hoka-One-One/Women-s-Gaviota-3" target="_blank">
                 <h4>HOKA One One Gaviota 4</h4>
-                <img src="media/wGaviota3.png" alt="">
+                <img src="images/shoes/wGaviota3.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1004035/Hoka-One-One/Women-s-Gaviota-3">Shop Now</a>
             </a>
@@ -817,7 +901,7 @@
         <section id="arahiW" class="hoka stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1156106/Hoka-One-One/Women-s-Arahi-6" target="_blank">
                 <h4>HOKA One One Arahi 6</h4>
-                <img src="media/wArahi6.png" alt="">
+                <img src="images/shoes/wArahi6.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1156106/Hoka-One-One/Women-s-Arahi-6">Shop Now</a>
             </a>
@@ -826,7 +910,7 @@
         <section id="riderW" class="mizuno neutralMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027340/Mizuno/Women-s-Wave-Rider-25" target="_blank">
                 <h4>Mizuno Wave Rider 25</h4>
-                <img src="media/wWaveRider25.png" alt="">
+                <img src="images/shoes/wWaveRider25.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027340/Mizuno/Women-s-Wave-Rider-25">Shop Now</a>
             </a>
@@ -834,7 +918,7 @@
         <section id="horizonW" class="mizuno stabilityMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1002870/Mizuno/Women-s-Wave-Horizon-5" target="_blank">
                 <h4>Mizuno Wave Horizon 5</h4>
-                <img src="media/wWaveHorizon5.png" alt="">
+                <img src="images/shoes/wWaveHorizon5.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1002870/Mizuno/Women-s-Wave-Horizon-5">Shop Now</a>
             </a>
@@ -842,7 +926,7 @@
         <section id="inspireW" class="mizuno stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1002799/Mizuno/Women-s-Wave-Inspire-17" target="_blank">
                 <h4>Mizuno Wave Inspire 17</h4>
-                <img src="media/mWaveInspire17.png" alt="">
+                <img src="images/shoes/mWaveInspire17.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1002799/Mizuno/Women-s-Wave-Inspire-17">Shop Now</a>
             </a>
@@ -851,7 +935,7 @@
         <section id="tenEightyW" class="newBalance neutralMax hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027121/New-Balance/Women-s-Fresh-Foam-1080v11" target="_blank">
                 <h4>New Balance 1080v12</h4>
-                <img src="media/w1080v11.png" alt="">
+                <img src="images/shoes/w1080v11.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027121/New-Balance/Women-s-Fresh-Foam-1080v11">Shop
                     Now</a>
@@ -860,7 +944,7 @@
         <section id="eightEightyW" class="newBalance neutralMid hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027009/New-Balance/Women-s-880v11" target="_blank">
                 <h4>New Balance 880v11</h4>
-                <img src="media/w880v11.png" alt="">
+                <img src="images/shoes/w880v11.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027009/New-Balance/Women-s-880v11">Shop Now</a>
             </a>
@@ -868,7 +952,7 @@
         <section id="vongoW" class="newBalance stabilityMax hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1031266/New-Balance/Women-s-Vongo-v5" target="_blank">
                 <h4>New Balance Vongo v5</h4>
-                <img src="media/wVongo5.png" alt="">
+                <img src="images/shoes/wVongo5.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1031266/New-Balance/Women-s-Vongo-v5">Shop Now</a>
             </a>
@@ -876,7 +960,7 @@
         <section id="eightSixtyW" class="newBalance stabilityMid hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1047636/New-Balance/Women-s-860v12" target="_blank">
                 <h4>New Balance 860v12</h4>
-                <img src="media/w860v12.png" alt="">
+                <img src="images/shoes/w860v12.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1047636/New-Balance/Women-s-860v12">Shop Now</a>
             </a>
@@ -885,7 +969,7 @@
         <section id="vomeroW" class="nike neutralMax hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1076013/Nike/Women-s-Vomero-16" target="_blank">
                 <h4>Nike Vomero</h4>
-                <img src="media/wVomero16.png" alt="">
+                <img src="images/shoes/wVomero16.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1076013/Nike/Women-s-Vomero-16">Shop Now</a>
             </a>
@@ -894,7 +978,7 @@
         <section id="pegasusW" class="nike neutralMid hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027080/Nike/Women-s-Pegasus-38" target="_blank">
                 <h4>Nike Pegasus 38</h4>
-                <img src="media/wPegasus38.png" alt="">
+                <img src="images/shoes/wPegasus38.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027080/Nike/Women-s-Pegasus-38">Shop Now</a>
             </a>
@@ -902,7 +986,7 @@
         <section id="zoomFlyW" class="nike neutralMid hidden shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>Nike Zoom Fly</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
@@ -910,7 +994,7 @@
         <section id="cloudXW" class="onRunning neutralLight hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1021929/On/Women-s-Cloud-X" target="_blank">
                 <h4>On Cloud X</h4>
-                <img src="media/wCloudX.png" alt="">
+                <img src="images/shoes/wCloudX.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1021929/On/Women-s-Cloud-X">Shop Now</a>
             </a>
@@ -918,21 +1002,21 @@
         <section id="cloudMonsterW" class="onRunning neutralMax hidden shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>On CloudMonster</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="cloudStratusW" class="onRunning neutralMax hidden shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>On CloudStratus</h4>
-                <img src="media/wCloudstratus.png" alt="">
+                <img src="images/shoes/wCloudstratus.png" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="cloudflowW" class="onRunning neutralMid hidden shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027298/On/Women-s-Cloudflow-3" target="_blank">
                 <h4>On Cloudflow</h4>
-                <img src="media/wCloudflow.png" alt="">
+                <img src="images/shoes/wCloudflow.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027298/On/Women-s-Cloudflow-3">Shop Now</a>
             </a>
@@ -940,7 +1024,7 @@
         <section id="cloudgoW" class="onRunning neutralMid hidden shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>On CloudGo</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
@@ -948,7 +1032,7 @@
         <section id="cloudflyerW" class="onRunning stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1021943/On/Women-s-Cloudflyer" target="_blank">
                 <h4>On Cloudflyer</h4>
-                <img src="media/wCloudflyer.png" alt="">
+                <img src="images/shoes/wCloudflyer.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1021943/On/Women-s-Cloudflyer">Shop Now</a>
             </a>
@@ -957,14 +1041,14 @@
         <section id="kinvaraW" class="saucony neutralLight shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>Saucony Kinvara 14</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="speedW" class="saucony neutralLight shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027108/Saucony/Women-s-Endorphin-Speed-2" target="_blank">
                 <h4>Saucony Endorphin Speed 2</h4>
-                <img src="media/wSpeed2.png" alt="">
+                <img src="images/shoes/wSpeed2.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027108/Saucony/Women-s-Endorphin-Speed-2">Shop Now</a>
             </a>
@@ -972,7 +1056,7 @@
         <section id="triumphW" class="saucony neutralMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027201/Saucony/Women-s-Triumph-19" target="_blank">
                 <h4>Saucony Triumph 19</h4>
-                <img src="media/wTriumph19.png" alt="">
+                <img src="images/shoes/wTriumph19.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027201/Saucony/Women-s-Triumph-19">Shop Now</a>
             </a>
@@ -980,14 +1064,14 @@
         <section id="rideW" class="saucony neutralMid shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>Saucony Ride 15</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="shiftW" class="saucony stabilityMax shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027115/Saucony/Women-s-Endorphin-Shift-2" target="_blank">
                 <h4>Saucony Endorphin Shift 2</h4>
-                <img src="media/wShift2.png" alt="">
+                <img src="images/shoes/wShift2.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027115/Saucony/Women-s-Endorphin-Shift-2">Shop Now</a>
             </a>
@@ -995,25 +1079,25 @@
         <section id="guideW" class="saucony stabilityMid shoeBlock hidden">
             <a href="" target="_blank">
                 <h4>Saucony Guide 15</h4>
-                <img src="media/" alt="">
+                <img src="images/shoes/" alt="">
                 <a class="shopBttn" target="_blank" href="">Shop Now</a>
             </a>
         </section>
         <section id="omniW" class="saucony stabilityMid shoeBlock hidden">
             <a href="https://shop.runpoint2.com/product/1027196/Saucony/Women-s-Omni-20" target="_blank">
                 <h4>Saucony Omni 20</h4>
-                <img src="media/wOmni20.png" alt="">
+                <img src="images/shoes/wOmni20.png" alt="">
                 <a class="shopBttn" target="_blank"
                     href="https://shop.runpoint2.com/product/1027196/Saucony/Women-s-Omni-20">Shop Now</a>
             </a>
         </section>
-    </section>
+    </section>  
 
-    <section>
-        <button id="restartBttn" type="button" value="restartBttn">Restart</button>
-    </section>
+    <footer>
+        <section>© Copyright Point 2 Running Company 2022</section>
+    </footer>
 
-    <!-- <script type="text/javascript" src="js/main.js"></script> -->
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>

@@ -3,47 +3,142 @@
      box-sizing: border-box;
 }
 
-/* Clear fix hack */
-.clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
-}
-
-.clear {
-	clear: both;
-}
-
 /******************************************
 /* BASE STYLES
 /*******************************************/
 
+html {
+     background-image: url('../images/backgrounds/shoeWall.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+}
+
 body {
      text-align: center;
      font-family: 'Oswald', sans-serif;
+     margin: 0;
 }
 
-/******************************************
-/* LAYOUT
-/*******************************************/
-/* header {
+button {
+     color: white;
+     font-family: 'Oswald', sans-serif;
+}
 
+h1 {
+     color: #ffffff;
+     font-size: 4rem;
+     margin: 0;
+}
+
+header {
+     background-color: #222;
 }
 
 footer {
+     background-color: #222;
+     color: white;
+}
 
-} */
+button {
+     cursor: pointer;
+}
 
+.restartBttn {
+     background-color: #ff6600;
+     font-size: 1.5rem;
+     border: none;
+     border-radius: 55px;
+     padding: 15px 30px;
+     transition: all .2s ease-in-out;
+}
+
+.restartBttn:hover {
+     background-color: #ff8533;
+     transform: scale(1.1);
+     
+}
 /******************************************
-/* ADDITIONAL STYLES
+/* QUESTION STYLES
 /*******************************************/
 
-/* .hidden {
+.hidden {
      display: none;
-} */
+}
+
+
+.mainContainer {
+     background-color: white;
+     border-radius: 20px;
+     margin: 5%;
+     padding: 2%;
+     box-shadow: 4px 4px 10px 2px #00000050;
+}
+
+.question {
+     display: flex;
+     flex-direction: column;
+     max-width: 100%;
+     height: auto;
+}
+
+.question>h2 {
+     font-size: 2.63rem;
+}
+
+.answers {
+     display: flex;
+     justify-content: center;
+}
+
+.answers img {
+     width: 100%;
+     height: auto;
+     border-radius: 18px 18px 0 0;
+}
+
+.answers button{
+     background-color: #222;
+     color: white;
+     font-size: 2rem;
+     border: none;
+     border-radius: 20px;
+     margin: 3%;
+     height: min-content;
+     padding: 0px;
+     box-shadow: 4px 4px 10px 2px #00000050;
+     transition: all .2s ease-in-out;
+}
+
+.answers button:hover {
+     background-color: #ff6600;
+     transform: scale(1.1);
+}
+
+.answers p {
+     padding: 0px 0px 10px 0px;
+     margin: 0;
+}
+
+#distanceImage {
+     padding: 0 2% 2% 2%;
+}
+
+.distanceBttns button {
+     background-color: #ff6600;
+     padding: 15px;
+     border-radius: 50px;
+     transition: all .2s ease-in-out;
+}
+
+.distanceBttns button:hover {
+     background-color: #ff8533;
+     transform: scale(1.1);
+}
+
+/******************************************
+/* RESULTS STYLES
+/*******************************************/
 
 #results {
      display: flex;
@@ -53,9 +148,9 @@ footer {
 }
 
 .shoeBlock {
+     background-color: white;
      padding: 20px;
      margin: 10px;
-     border: 3px solid lightgray;
      border-radius: 10px;
      box-shadow: 4px 4px 10px 2px #00000050;
      width: 20%;
@@ -77,6 +172,9 @@ footer {
 #displayWomensResult {
      display: block;
      width: 100%;
+     color: white;
+     font-size: 2rem;
+     background-color: #ff6600;
 }
 
 .shoeBlock img {
@@ -97,14 +195,6 @@ footer {
      border-radius: 15px;
 }
 
-.questionContainer {
-     width: 50%;
-     margin: auto;
-     display: flex;
-     justify-content: space-around;
-}
-
-button,
 .shopBttn {
      padding: 10px;
      margin: 10px;
@@ -116,17 +206,9 @@ button,
      transition: all .2s ease-in-out;
 }
 
-button:hover,
 .shopBttn:hover {
      background-color: #ff8533;
      transform: scale(1.1);
-}
-
-.mainContainer {
-     border: 3px solid lightgray;
-     margin: 20px;
-     border-radius: 10px;
-     box-shadow: 4px 4px 10px 2px #00000050;
 }
 
 @media screen and (max-width: 600px) {
