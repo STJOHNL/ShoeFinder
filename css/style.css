@@ -1,227 +1,246 @@
 /* Box Model Hack */
+
 * {
-     box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 
 /******************************************
 /* BASE STYLES
 /*******************************************/
 
-html {
-     background-image: url('../images/backgrounds/shoeWall.png');
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-position: center;
-}
-
 body {
-     text-align: center;
-     font-family: 'Oswald', sans-serif;
-     margin: 0;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    background-color: #222;
 }
 
 button {
-     color: white;
-     font-family: 'Oswald', sans-serif;
+    color: white;
+    font-family: 'Oswald', sans-serif;
 }
 
 h1 {
-     color: #ffffff;
-     font-size: 4rem;
-     margin: 0;
+    color: #ffffff;
+    font-size: 4rem;
+    margin: 0;
 }
 
 header {
-     background-color: #222;
-     padding: 2%;
+    background-color: #222;
+    padding: 2%;
 }
 
 footer {
-     background-color: #222;
-     color: white;
-     padding: 2%;
+    background-color: #222;
+    color: lightgray;
+    padding: 5px;
+    font-size: 10px;
+    margin-bottom: 0px;
 }
 
 button {
-     cursor: pointer;
+    cursor: pointer;
 }
 
 .restartBttn {
-     background-color: #ff6600;
-     font-size: 1.5rem;
-     border: none;
-     border-radius: 55px;
-     padding: 15px 30px;
-     transition: all .2s ease-in-out;
-     margin-top: 5%;
+    background-color: #ff6600;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 55px;
+    padding: 15px 30px;
+    transition: all .2s ease-in-out;
+    margin-top: 5%;
 }
 
 .restartBttn:hover {
-     background-color: #ff8533;
-     transform: scale(1.1);
-    
+    background-color: #ff8533;
+    transform: scale(1.1);
 }
+
+
 /******************************************
 /* QUESTION STYLES
 /*******************************************/
 
 .hidden {
-     display: none;
+    display: none;
 }
 
-
 .mainContainer {
-     background-color: white;
-     border-radius: 20px;
-     margin: 2% 10%;
-     padding: 2%;
-     box-shadow: 4px 4px 10px 2px #00000050;
+    background-color: white;
+    border-radius: 20px;
+    margin: 2% 10%;
+    padding: 2%;
+    box-shadow: 4px 4px 10px 2px #00000050;
 }
 
 .question {
-     display: flex;
-     flex-direction: column;
-     max-width: 100%;
-     height: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: auto;
 }
 
 .question>h2 {
-     font-size: 2.63rem;
+    font-size: 2.63rem;
 }
 
 .answers {
-     display: flex;
-     justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .answers img {
-     width: 100%;
-     height: auto;
-     border-radius: 18px 18px 0 0;
+    width: 100%;
+    height: auto;
+    border-radius: 18px 18px 0 0;
 }
 
-.answers button{
-     background-color: #222;
-     color: white;
-     font-size: 2rem;
-     border: none;
-     border-radius: 20px;
-     margin: 3%;
-     height: min-content;
-     padding: 0px;
-     box-shadow: 4px 4px 10px 2px #00000050;
-     transition: all .2s ease-in-out;
+.answers button {
+    background-color: #222;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    border-radius: 20px;
+    margin: 3%;
+    height: min-content;
+    padding: 0px;
+    box-shadow: 4px 4px 10px 2px #00000050;
+    transition: all .2s ease-in-out;
 }
 
 .answers button:hover {
-     background-color: #ff6600;
-     transform: scale(1.1);
+    background-color: #ff6600;
+    transform: scale(1.1);
 }
 
 .answers p {
-     padding: 0px 0px 10px 0px;
-     margin: 0;
+    padding: 0px 0px 10px 0px;
+    margin: 0;
 }
 
 #distanceImage {
-     padding: 0 2% 2% 2%;
+    padding: 0 2% 2% 2%;
 }
 
 .distanceBttns button {
-     background-color: #ff6600;
-     padding: 15px;
-     border-radius: 50px;
-     transition: all .2s ease-in-out;
+    background-color: #ff6600;
+    padding: 15px;
+    border-radius: 50px;
+    transition: all .2s ease-in-out;
 }
 
 .distanceBttns button:hover {
-     background-color: #ff8533;
-     transform: scale(1.1);
+    background-color: #ff8533;
+    transform: scale(1.1);
 }
+
 
 /******************************************
 /* RESULTS STYLES
 /*******************************************/
 
-#results {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     align-items: stretch;
+#resultContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    border-radius: 20px;
+    margin: 2% 10%;
+    background-color: #fafafa;
 }
 
 .shoeBlock {
-     background-color: white;
-     padding: 20px;
-     margin: 10px;
-     border-radius: 10px;
-     box-shadow: 4px 4px 10px 2px #00000050;
-     width: 20%;
-     transition: all .2s ease-in-out;
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px 2px #00000050;
+    width: 20%;
+    transition: all .2s ease-in-out;
 }
 
 .shoeBlock:hover {
-     border: 3px solid #ff6600;
-     transform: scale(1.1);
+    border: 3px solid #ff6600;
+    transform: scale(1.1);
 }
 
 #results a {
-     text-decoration: none;
-     display: block;
-     margin: auto;
+    text-decoration: none;
+    display: block;
+    margin: auto;
 }
 
-#displayMensResult,
-#displayWomensResult {
-     display: block;
-     width: 100%;
-     color: white;
-     font-size: 2rem;
-     background-color: #ff6600;
+#displayContainer {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 18px 18px 0 0;
+    padding: 2%;
+    color: #222;
+    font-weight: 300;
+}
+
+#displayContainer p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+#displayContainer a {
+    color: dimgray;
+}
+
+#displayResult {
+    color: #ff6600;
+    text-shadow: 2px 1px 1px #00000050;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 0;
 }
 
 .shoeBlock img {
-     border-radius: 15px;
-     max-width: 100%;
-     height: auto;
-     margin-bottom: 15px;
+    border-radius: 15px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
 }
 
 .shoeBlock h4 {
-     color: #222;
+    color: #222;
 }
 
 .shopBttn {
-     color: white;
-     background-color: #ff6600;
-     padding: 16px 40px 16px 40px;
-     border-radius: 15px;
+    color: white;
+    background-color: #ff6600;
+    padding: 16px 40px 16px 40px;
+    border-radius: 15px;
 }
 
 .shopBttn {
-     padding: 10px;
-     margin: 10px;
-     color: white;
-     background-color: #ff6600;
-     border: none;
-     border-radius: 55px;
-     box-shadow: 4px 4px 10px 2px #00000050;
-     transition: all .2s ease-in-out;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    background-color: #ff6600;
+    border: none;
+    border-radius: 55px;
+    box-shadow: 4px 4px 10px 2px #00000050;
+    transition: all .2s ease-in-out;
 }
 
 .shopBttn:hover {
-     background-color: #ff8533;
-     transform: scale(1.1);
+    background-color: #ff8533;
+    transform: scale(1.1);
 }
 
 @media screen and (max-width: 600px) {
-     .shoeBlock{
-          width: 60%;
-     }
+    .shoeBlock {
+        width: 60%;
+    }
 }
 
 @media screen and (min-width: 601px) and (max-width: 800px) {
-     .shoeBlock{
-          width: 30%;
-     }
+    .shoeBlock {
+        width: 30%;
+    }
 }

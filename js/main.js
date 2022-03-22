@@ -373,40 +373,40 @@ function womensStabilityMax() {
 
 function finalResult() {
     if (supportLevel > 0 && cushionLevel === 'lightFast' && shoeGender === 'mens') {
-        document.querySelector('#displayMensResult').innerText = 'Light Cushion Stability';
+        document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
         mensStabilityLight();
     } else if (supportLevel > 0 && cushionLevel === 'midCushion' && shoeGender === 'mens') {
-        document.querySelector('#displayMensResult').innerText = 'Medium Cushion Stability';
+        document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
         mensStabilityMid();
     } else if (supportLevel > 0 && cushionLevel === 'maxCushion' && shoeGender === 'mens') {
-        document.querySelector('#displayMensResult').innerText = 'Max Cushion Stability';
+        document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
         mensStabilityMax();
     } else if (supportLevel <= 0 && cushionLevel === 'lightFast' && shoeGender === 'mens') {
-        document.querySelector('#displayMensResult').innerText = 'Light Cushion Neutral';
+        document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
         mensNeutralLight();
     } else if (supportLevel <= 0 && cushionLevel === 'midCushion' && shoeGender === 'mens') {
-        document.querySelector('#displayMensResult').innerText = 'Medium Cushion Neutral';
+        document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
         mensNeutralMid();
     } else if (supportLevel <= 0 && cushionLevel === 'maxCushion' && shoeGender === 'mens') {
-        document.querySelector('#displayMensResult').innerText = 'Max Cushion Neutral';
+        document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
         mensNeutralMax();
     } else if (supportLevel > 0 && cushionLevel === 'lightFast' && shoeGender === 'womens') {
-        document.querySelector('#displayWomensResult').innerText = 'Light Cushion Stability';
+        document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
         womensStabilityLight();
     } else if (supportLevel > 0 && cushionLevel === 'midCushion' && shoeGender === 'womens') {
-        document.querySelector('#displayWomensResult').innerText = 'Medium Cushion Stability';
+        document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
         womensStabilityMid();
     } else if (supportLevel > 0 && cushionLevel === 'maxCushion' && shoeGender === 'womens') {
-        document.querySelector('#displayWomensResult').innerText = 'Max Cushion Stability';
+        document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
         womensStabilityMax();
     } else if (supportLevel <= 0 && cushionLevel === 'lightFast' && shoeGender === 'womens') {
-        document.querySelector('#displayWomensResult').innerText = 'Light Cushion Neutral';
+        document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
         womensNeutralLight();
     } else if (supportLevel <= 0 && cushionLevel === 'midCushion' && shoeGender === 'womens') {
-        document.querySelector('#displayWomensResult').innerText = 'Medium Cushion Neutral';
+        document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
         womensNeutralMid();
     } else if (supportLevel <= 0 && cushionLevel === 'maxCushion' && shoeGender === 'womens') {
-        document.querySelector('#displayWomensResult').innerText = 'Max Cushion Neutral';
+        document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
         womensNeutralMax();
     } else {
         document.querySelector('#result').innerText = 'Error';
