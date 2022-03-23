@@ -154,9 +154,9 @@ button {
 
 .shoeBlock {
     background-color: white;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
+    padding: 1.5%;
+    margin: 1.6%;
+    border-radius: 20px;
     box-shadow: 4px 4px 10px 2px #00000050;
     width: 20%;
     transition: all .2s ease-in-out;
@@ -169,8 +169,8 @@ button {
 
 #results a {
     text-decoration: none;
+    margin: 2%;
     display: block;
-    margin: auto;
 }
 
 #displayContainer {
@@ -213,17 +213,10 @@ button {
 .shopBttn {
     color: white;
     background-color: #ff6600;
+    margin: 10px;
     padding: 16px 40px 16px 40px;
     border-radius: 15px;
-}
-
-.shopBttn {
-    padding: 10px;
-    margin: 10px;
-    color: white;
-    background-color: #ff6600;
     border: none;
-    border-radius: 55px;
     box-shadow: 4px 4px 10px 2px #00000050;
     transition: all .2s ease-in-out;
 }
@@ -235,7 +228,18 @@ button {
 
 @media screen and (max-width: 600px) {
     .shoeBlock {
-        width: 60%;
+        width: 45%;
+        margin: 2%;
+        padding: 1%;
+    }
+    .shopBttn {
+        padding: 5%;
+    }
+    .answers {
+        flex-wrap: wrap;
+    }
+    .question>h2 {
+        font-size: 2rem;
     }
 }
 
