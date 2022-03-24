@@ -212,11 +212,11 @@ function mensShoes() {
 function mensNeutralLight() {
     document.querySelector("#launchM").classList.toggle('hidden');
     document.querySelector("#hyperionTempoM").classList.toggle('hidden');
-    document.querySelector("#hyperionEliteM").classList.toggle('hidden');
+    // document.querySelector("#hyperionEliteM").classList.toggle('hidden');
     document.querySelector("#rinconM").classList.toggle('hidden');
-    document.querySelector("#carbonXM").classList.toggle('hidden');
+    // document.querySelector("#carbonXM").classList.toggle('hidden');
     document.querySelector("#machM").classList.toggle('hidden');
-    document.querySelector("#kinvaraM").classList.toggle('hidden');
+    // document.querySelector("#kinvaraM").classList.toggle('hidden');
     document.querySelector("#speedM").classList.toggle('hidden');
     document.querySelector("#cloudXM").classList.toggle('hidden');
 }
@@ -233,9 +233,9 @@ function mensNeutralMid() {
     document.querySelector("#riderM").classList.toggle('hidden');
     document.querySelector("#eightEightyM").classList.toggle('hidden');
     document.querySelector("#pegasusM").classList.toggle('hidden');
-    document.querySelector("#zoomFlyM").classList.toggle('hidden');
+    // document.querySelector("#zoomFlyM").classList.toggle('hidden');
     document.querySelector("#cloudflowM").classList.toggle('hidden');
-    document.querySelector("#cloudgoM").classList.toggle('hidden');
+    // document.querySelector("#cloudgoM").classList.toggle('hidden');
     document.querySelector("#rideM").classList.toggle('hidden');
 }
 
@@ -284,7 +284,7 @@ function mensStabilityMax() {
     document.querySelector("#horizonM").classList.toggle('hidden');
     document.querySelector("#vongoM").classList.toggle('hidden');
     document.querySelector("#shiftM").classList.toggle('hidden');
-    document.querySelector("levitateGTSM").classList.toggle('hidden');
+    document.querySelector("#levitateGTSM").classList.toggle('hidden');
 }
 
 // Women's shoe categories
@@ -294,13 +294,13 @@ function mensStabilityMax() {
 function womensNeutralLight() {
     document.querySelector("#launchW").classList.toggle('hidden');
     document.querySelector("#hyperionTempoW").classList.toggle('hidden');
-    document.querySelector("#hyperionEliteW").classList.toggle('hidden');
+    // document.querySelector("#hyperionEliteW").classList.toggle('hidden');
     document.querySelector("#rinconW").classList.toggle('hidden');
-    document.querySelector("#carbonXW").classList.toggle('hidden');
+    // document.querySelector("#carbonXW").classList.toggle('hidden');
     document.querySelector("#machW").classList.toggle('hidden');
-    document.querySelector("#kinvaraW").classList.toggle('hidden');
+    // document.querySelector("#kinvaraW").classList.toggle('hidden');
     document.querySelector("#speedW").classList.toggle('hidden');
-    document.querySelector("cloudXW").classList.toggle('hidden');
+    document.querySelector("#cloudXW").classList.toggle('hidden');
 }
 
 // Only show Women's Medium Cushion Neutral Shoes
@@ -315,9 +315,9 @@ function womensNeutralMid() {
     document.querySelector("#riderW").classList.toggle('hidden');
     document.querySelector("#eightEightyW").classList.toggle('hidden');
     document.querySelector("#pegasusW").classList.toggle('hidden');
-    document.querySelector("#zoomFlyW").classList.toggle('hidden');
+    // document.querySelector("#zoomFlyW").classList.toggle('hidden');
     document.querySelector("#cloudflowW").classList.toggle('hidden');
-    document.querySelector("#cloudgoW").classList.toggle('hidden');
+    // document.querySelector("#cloudgoW").classList.toggle('hidden');
     document.querySelector("#rideW").classList.toggle('hidden');
 }
 
@@ -335,7 +335,7 @@ function womensNeutralMax() {
     document.querySelector("#cloudMonsterW").classList.toggle('hidden');
     document.querySelector("#cloudStratusW").classList.toggle('hidden');
     document.querySelector("#triumphW").classList.toggle('hidden');
-    document.querySelector("levitateGTSW").classList.toggle('hidden');
+    document.querySelector("#levitateGTSW").classList.toggle('hidden');
 }
 
 // Only show Women's Light Cushion Stability Shoes
