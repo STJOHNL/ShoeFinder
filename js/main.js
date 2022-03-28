@@ -1,4 +1,4 @@
-// Variables for selecting different questions
+// Variables for selecting different questions and shoe categories
 
 const shoeUse = document.querySelector('#shoeUse');
 const mileage = document.querySelector('#mileage');
@@ -9,6 +9,18 @@ const kneeTrack = document.querySelector('#kneeTrack');
 const cushion = document.querySelector('#cushion');
 const brand = document.querySelector('#brand');
 const gender = document.querySelector('#gender');
+const mNeutralLight = document.querySelectorAll('.mNeutralLight');
+const mNeutralMid = document.querySelectorAll('.mNeutralMid');
+const mNeutralMax = document.querySelectorAll('.mNeutralMax');
+const mStabilityLight = document.querySelectorAll('.mStabilityLight');
+const mStabilityMid = document.querySelectorAll('.mStabilityMid');
+const mStabilityMax = document.querySelectorAll('.mStabilityMax');
+const wNeutralLight = document.querySelectorAll('.wNeutralLight');
+const wNeutralMid = document.querySelectorAll('.wNeutralMid');
+const wNeutralMax = document.querySelectorAll('.wNeutralMax');
+const wStabilityLight = document.querySelectorAll('.wStabilityLight');
+const wStabilityMid = document.querySelectorAll('.wStabilityMid');
+const wStabilityMax = document.querySelectorAll('.wStabilityMax');
 
 // Variable that holds users support needed
 
@@ -205,209 +217,69 @@ function mensShoes() {
 
 // Desired size
 
-// Men's shoe categories
-
-// Only show Men's Light Cushion Neutral Shoes
-
-function mensNeutralLight() {
-    document.querySelector("#launchM").classList.toggle('hidden');
-    document.querySelector("#hyperionTempoM").classList.toggle('hidden');
-    // document.querySelector("#hyperionEliteM").classList.toggle('hidden');
-    document.querySelector("#rinconM").classList.toggle('hidden');
-    // document.querySelector("#carbonXM").classList.toggle('hidden');
-    document.querySelector("#machM").classList.toggle('hidden');
-    // document.querySelector("#kinvaraM").classList.toggle('hidden');
-    document.querySelector("#speedM").classList.toggle('hidden');
-    document.querySelector("#cloudXM").classList.toggle('hidden');
-}
-
-// Only show Men's Medium Cushion Neutral Shoes
-
-function mensNeutralMid() {
-    document.querySelector("#escalanteM").classList.toggle('hidden');
-    document.querySelector("#riveraM").classList.toggle('hidden');
-    document.querySelector("#evorideM").classList.toggle('hidden');
-    document.querySelector("#ghostM").classList.toggle('hidden');
-    document.querySelector("#traceM").classList.toggle('hidden');
-    document.querySelector("#kawanaM").classList.toggle('hidden');
-    document.querySelector("#riderM").classList.toggle('hidden');
-    document.querySelector("#eightEightyM").classList.toggle('hidden');
-    document.querySelector("#pegasusM").classList.toggle('hidden');
-    // document.querySelector("#zoomFlyM").classList.toggle('hidden');
-    document.querySelector("#cloudflowM").classList.toggle('hidden');
-    // document.querySelector("#cloudgoM").classList.toggle('hidden');
-    document.querySelector("#rideM").classList.toggle('hidden');
-}
-
-// Only show Men's Max Cushion Neutral Shoes
-
-function mensNeutralMax() {
-    document.querySelector("#torinM").classList.toggle('hidden');
-    document.querySelector("#nimbusM").classList.toggle('hidden');
-    document.querySelector("#glycerinM").classList.toggle('hidden');
-    document.querySelector("#levitateM").classList.toggle('hidden');
-    document.querySelector("#bondiM").classList.toggle('hidden');
-    document.querySelector("#cliftonM").classList.toggle('hidden');
-    document.querySelector("#tenEightyM").classList.toggle('hidden');
-    document.querySelector("#vomeroM").classList.toggle('hidden');
-    document.querySelector("#cloudMonsterM").classList.toggle('hidden');
-    document.querySelector("#cloudStratusM").classList.toggle('hidden');
-    document.querySelector("#triumphM").classList.toggle('hidden');
-}
-
-// Only show Men's Light Cushion Stability Shoes
-
-function mensStabilityLight() {
-    document.querySelector("#launchGTSM").classList.toggle('hidden');
-
-}
-
-// Only show Men's Medium Cushion Stability Shoes
-
-function mensStabilityMid() {
-    document.querySelector("#provisionM").classList.toggle('hidden');
-    document.querySelector("#gtTwoThousandM").classList.toggle('hidden');
-    document.querySelector("#adrenalineM").classList.toggle('hidden');
-    document.querySelector("#arahiM").classList.toggle('hidden');
-    document.querySelector("#eightSixtyM").classList.toggle('hidden');
-    document.querySelector("#cloudflyerM").classList.toggle('hidden');
-    document.querySelector("#guideM").classList.toggle('hidden');
-    document.querySelector("#omniM").classList.toggle('hidden');
-}
-
-// Only show Men's Max Cushion Stability Shoes
-
-function mensStabilityMax() {
-    document.querySelector("#kayanoM").classList.toggle('hidden');
-    document.querySelector("#glycerinGTSM").classList.toggle('hidden');
-    document.querySelector("#gaviotaM").classList.toggle('hidden');
-    document.querySelector("#horizonM").classList.toggle('hidden');
-    document.querySelector("#vongoM").classList.toggle('hidden');
-    document.querySelector("#shiftM").classList.toggle('hidden');
-    document.querySelector("#levitateGTSM").classList.toggle('hidden');
-}
-
-// Women's shoe categories
-
-// Only show Women's Light Cushion Neutral Shoes
-
-function womensNeutralLight() {
-    document.querySelector("#launchW").classList.toggle('hidden');
-    document.querySelector("#hyperionTempoW").classList.toggle('hidden');
-    // document.querySelector("#hyperionEliteW").classList.toggle('hidden');
-    document.querySelector("#rinconW").classList.toggle('hidden');
-    // document.querySelector("#carbonXW").classList.toggle('hidden');
-    document.querySelector("#machW").classList.toggle('hidden');
-    // document.querySelector("#kinvaraW").classList.toggle('hidden');
-    document.querySelector("#speedW").classList.toggle('hidden');
-    document.querySelector("#cloudXW").classList.toggle('hidden');
-}
-
-// Only show Women's Medium Cushion Neutral Shoes
-
-function womensNeutralMid() {
-    document.querySelector("#escalanteW").classList.toggle('hidden');
-    document.querySelector("#riveraW").classList.toggle('hidden');
-    document.querySelector("#evorideW").classList.toggle('hidden');
-    document.querySelector("#ghostW").classList.toggle('hidden');
-    document.querySelector("#traceW").classList.toggle('hidden');
-    document.querySelector("#kawanaW").classList.toggle('hidden');
-    document.querySelector("#riderW").classList.toggle('hidden');
-    document.querySelector("#eightEightyW").classList.toggle('hidden');
-    document.querySelector("#pegasusW").classList.toggle('hidden');
-    // document.querySelector("#zoomFlyW").classList.toggle('hidden');
-    document.querySelector("#cloudflowW").classList.toggle('hidden');
-    // document.querySelector("#cloudgoW").classList.toggle('hidden');
-    document.querySelector("#rideW").classList.toggle('hidden');
-}
-
-// Only show Women's Max Cushion Neutral Shoes
-
-function womensNeutralMax() {
-    document.querySelector("#torinW").classList.toggle('hidden');
-    document.querySelector("#nimbusW").classList.toggle('hidden');
-    document.querySelector("#glycerinW").classList.toggle('hidden');
-    document.querySelector("#levitateW").classList.toggle('hidden');
-    document.querySelector("#bondiW").classList.toggle('hidden');
-    document.querySelector("#cliftonW").classList.toggle('hidden');
-    document.querySelector("#tenEightyW").classList.toggle('hidden');
-    document.querySelector("#vomeroW").classList.toggle('hidden');
-    document.querySelector("#cloudMonsterW").classList.toggle('hidden');
-    document.querySelector("#cloudStratusW").classList.toggle('hidden');
-    document.querySelector("#triumphW").classList.toggle('hidden');
-    document.querySelector("#levitateGTSW").classList.toggle('hidden');
-}
-
-// Only show Women's Light Cushion Stability Shoes
-
-function womensStabilityLight() {
-    document.querySelector("#launchGTSW").classList.toggle('hidden');
-
-}
-
-// Only show Women's Medium Cushion Stability Shoes
-
-function womensStabilityMid() {
-    document.querySelector("#provisionW").classList.toggle('hidden');
-    document.querySelector("#gtTwoThousandW").classList.toggle('hidden');
-    document.querySelector("#adrenalineW").classList.toggle('hidden');
-    document.querySelector("#arahiW").classList.toggle('hidden');
-    document.querySelector("#eightSixtyW").classList.toggle('hidden');
-    document.querySelector("#cloudflyerW").classList.toggle('hidden');
-    document.querySelector("#guideW").classList.toggle('hidden');
-    document.querySelector("#omniW").classList.toggle('hidden');
-}
-
-// Only show Women's Max Cushion Stability Shoes
-
-function womensStabilityMax() {
-    document.querySelector("#kayanoW").classList.toggle('hidden');
-    document.querySelector("#glycerinGTSW").classList.toggle('hidden');
-    document.querySelector("#gaviotaW").classList.toggle('hidden');
-    document.querySelector("#horizonW").classList.toggle('hidden');
-    document.querySelector("#vongoW").classList.toggle('hidden');
-    document.querySelector("#shiftW").classList.toggle('hidden');
-}
-
 // Display category user needs based on support needs, desired cushion, and gender.
 
 function finalResult() {
     if (supportLevel > 0 && cushionLevel === 'lightFast' && shoeGender === 'mens') {
         document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
-        mensStabilityLight();
+        mStabilityLight.forEach(x => {
+            x.classList.toggle('hidden');
+        })
     } else if (supportLevel > 0 && cushionLevel === 'midCushion' && shoeGender === 'mens') {
         document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
-        mensStabilityMid();
+        mStabilityMid.forEach(x => {
+            x.classList.toggle('hidden');
+        })
     } else if (supportLevel > 0 && cushionLevel === 'maxCushion' && shoeGender === 'mens') {
         document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
-        mensStabilityMax();
+        mStabilityMax.forEach(x => {
+            x.classList.toggle('hidden');
+        })
     } else if (supportLevel <= 0 && cushionLevel === 'lightFast' && shoeGender === 'mens') {
         document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
-        mensNeutralLight();
+        mNeutralLight.forEach(x => {
+            x.classList.toggle('hidden');
+        })
     } else if (supportLevel <= 0 && cushionLevel === 'midCushion' && shoeGender === 'mens') {
         document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
-        mensNeutralMid();
+        mNeutralMid.forEach(x => {
+            x.classList.toggle('hidden');
+        })
     } else if (supportLevel <= 0 && cushionLevel === 'maxCushion' && shoeGender === 'mens') {
         document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
-        mensNeutralMax();
+        mNeutralMax.forEach(x => {
+            x.classList.toggle('hidden');
+        })
     } else if (supportLevel > 0 && cushionLevel === 'lightFast' && shoeGender === 'womens') {
         document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
-        womensStabilityLight();
+        wStabilityLight.forEach(x => {
+            x.classList.toggle('hidden');
+        })
     } else if (supportLevel > 0 && cushionLevel === 'midCushion' && shoeGender === 'womens') {
         document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
-        womensStabilityMid();
+        wStabilityMid.forEach(x => {
+            x.classList.toggle('hidden');
+        })
     } else if (supportLevel > 0 && cushionLevel === 'maxCushion' && shoeGender === 'womens') {
         document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
-        womensStabilityMax();
+        wStabilityMax.forEach(x => {
+            x.classList.toggle('hidden');
+        })
     } else if (supportLevel <= 0 && cushionLevel === 'lightFast' && shoeGender === 'womens') {
         document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
-        womensNeutralLight();
+        wNeutralLight.forEach(x => {
+            x.classList.toggle('hidden');
+        })
     } else if (supportLevel <= 0 && cushionLevel === 'midCushion' && shoeGender === 'womens') {
         document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
-        womensNeutralMid();
+        wNeutralMid.forEach(x => {
+            x.classList.toggle('hidden');
+        })
     } else if (supportLevel <= 0 && cushionLevel === 'maxCushion' && shoeGender === 'womens') {
         document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
-        womensNeutralMax();
+        wNeutralMax.forEach(x => {
+            x.classList.toggle('hidden');
+        })
     } else {
         document.querySelector('#result').innerText = 'Error';
     }
