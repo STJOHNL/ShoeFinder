@@ -85,6 +85,23 @@ button {
 
 .question>h2 {
     font-size: 2.63rem;
+    margin-bottom: 0;
+}
+
+.question h2+p {
+    font-weight: 300;
+    font-size: 1.25rem;
+    margin-bottom: 0;
+}
+
+.question h2+p+a {
+    text-decoration: none;
+    color: dimgray;
+    font-weight: 300;
+}
+
+.question h2+p+a:hover {
+    color: #ff6600;
 }
 
 .answers {
@@ -189,6 +206,10 @@ button {
 
 #displayContainer a {
     color: dimgray;
+}
+
+#displayContainer a:hover {
+    color: #ff6600;
 }
 
 #displayResult {
