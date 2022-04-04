@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Logan St. John">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
+    <title>Shoe Finder</title>
+
+    <style>
+        /* Box Model Hack */
+        
+        * {
+            box-sizing: border-box;
+        }
+        /******************************************
+/* BASE STYLES
+/*******************************************/
+        
+        body {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            margin: 0;
+            background-color: #222;
+        }
+        
+        button {
+            color: white;
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        h1 {
+            color: #ffffff;
+            font-size: 4rem;
+            margin: 0;
+        }
+        
+        header {
+            background-color: #222;
+            padding: 2%;
+        }
+        
+        footer {
+            background-color: #222;
+            color: lightgray;
+            padding: 5px;
+            font-size: 10px;
+            margin-bottom: 0px;
+        }
+        
+        button {
+            cursor: pointer;
+        }
+        
+        .restartBttn {
+            background-color: #ff6600;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 55px;
+            padding: 15px 30px;
+            transition: all .2s ease-in-out;
+            margin-top: 5%;
+        }
+        
+        .restartBttn:hover {
+            background-color: #ff8533;
+            transform: scale(1.1);
+        }
+        /******************************************
+/* QUESTION STYLES
+/*******************************************/
+        
+        .hidden {
+            display: none;
+        }
+        
+        .mainContainer {
+            background-color: white;
+            border-radius: 20px;
+            margin: 2% 10%;
+            padding: 2%;
+            box-shadow: 4px 4px 10px 2px #00000050;
+        }
+        
+        .question {
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .question>h2 {
+            font-size: 2.63rem;
+            margin-bottom: 0;
+        }
+        
+        .question h2+p {
+            font-weight: 300;
+            font-size: 1.25rem;
+            margin-bottom: 0;
+        }
+        
+        .question h2+p+a {
+            text-decoration: none;
+            color: dimgray;
+            font-weight: 300;
+        }
+        
+        .question h2+p+a:hover {
+            color: #ff6600;
+        }
+        
+        .answers {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .answers img {
+            width: 100%;
+            height: auto;
+            border-radius: 18px 18px 0 0;
+        }
+        
+        .answers button {
+            background-color: #222;
+            color: white;
+            font-size: 2rem;
+            border: none;
+            border-radius: 20px;
+            margin: 3%;
+            height: min-content;
+            padding: 0px;
+            box-shadow: 4px 4px 10px 2px #00000050;
+            transition: all .2s ease-in-out;
+        }
+        
+        .answers button:hover {
+            background-color: #ff6600;
+            transform: scale(1.1);
+        }
+        
+        .answers p {
+            padding: 0px 0px 10px 0px;
+            margin: 0;
+        }
+        
+        #distanceImage {
+            padding: 0 2% 2% 2%;
+        }
+        
+        .distanceBttns button {
+            background-color: #ff6600;
+            padding: 15px;
+            border-radius: 50px;
+            transition: all .2s ease-in-out;
+        }
+        
+        .distanceBttns button:hover {
+            background-color: #ff8533;
+            transform: scale(1.1);
+        }
+        /******************************************
+/* RESULTS STYLES
+/*******************************************/
+        
+        #resultContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            border-radius: 20px;
+            margin: 2% 10%;
+            background-color: #fafafa;
+        }
+        
+        .shoeBlock {
+            background-color: white;
+            padding: 1.5%;
+            margin: 1.6%;
+            border-radius: 20px;
+            box-shadow: 4px 4px 10px 2px #00000050;
+            width: 20%;
+            transition: all .2s ease-in-out;
+        }
+        
+        .shoeBlock:hover {
+            border: 3px solid #ff6600;
+            transform: scale(1.1);
+        }
+        
+        #results a {
+            text-decoration: none;
+            margin: 2%;
+            display: block;
+        }
+        
+        #displayContainer {
+            width: 100%;
+            margin-top: 0;
+            border-radius: 18px 18px 0 0;
+            padding: 2%;
+            color: #222;
+            font-weight: 300;
+        }
+        
+        #displayContainer p {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        #displayContainer a {
+            color: dimgray;
+        }
+        
+        #displayContainer a:hover {
+            color: #ff6600;
+        }
+        
+        #displayResult {
+            color: #ff6600;
+            text-shadow: 2px 1px 1px #00000050;
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+        
+        .shoeBlock img {
+            border-radius: 15px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        
+        .shoeBlock h4 {
+            color: #222;
+        }
+        
+        .shopBttn {
+            color: white;
+            background-color: #ff6600;
+            margin: 10px;
+            padding: 16px 40px 16px 40px;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 4px 4px 10px 2px #00000050;
+            transition: all .2s ease-in-out;
+        }
+        
+        .shopBttn:hover {
+            background-color: #ff8533;
+            transform: scale(1.1);
+        }
+        
+        @media screen and (max-width: 600px) {
+            .shoeBlock {
+                width: 45%;
+                margin: 2%;
+                padding: 1%;
+            }
+            .shopBttn {
+                padding: 5%;
+            }
+            .answers {
+                flex-wrap: wrap;
+            }
+            .question>h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media screen and (min-width: 601px) and (max-width: 800px) {
+            .shoeBlock {
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <header>
+        <h1>Shoe Finder</h1>
+    </header> -->
+
+    <section id="shoeUse" class="mainContainer">
+        <section class="question">
+            <h2>What will you be using your shoes for?</h2>
+            <section class="answers">
+                <button id="running" type="button" value="running">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/running.png" alt="">
+                    <p>Running</p>
+                </button>
+                <button id="walking" type="button" value="walking">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/walking.png" alt="">
+                    <p>Walking</p>
+                </button>
+                <button id="everyday" type="button" value="everyday">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/everyday.png" alt="">
+                    <p>Everyday</p>
+                </button>
+            </section>
+        </section>
+    </section>
+
+    <section id="mileage" class="hidden mainContainer">
+        <section class="question">
+            <h2>How many miles a week do you run/walk?</h2>
+            <img id="distanceImage" src="https://p2shoefinder.netlify.app/images/answerPics/distance.png" alt="">
+            <section class="answers distanceBttns">
+                <button id="underTen" type="button" value="underTen">0-10 Miles</button>
+                <button id="tenToTwenty" type="button" value="tenToTwenty">10-20 Miles</button>
+                <button id="moreThanThirty" type="button" value="moreThanThirty">30+ Miles</button>
+            </section>
+        </section>
+    </section>
+
+    <!-- <section id="races" class="hidden mainContainer">
+        <section class="question">
+            <h2>Any upcoming races?</h2>
+            <section class="answers">
+                <input id="fiveK" type="checkbox" name="fiveK" value="fiveK">
+                <label for="fiveK" class="checkboxChild">5K</label>
+                <input id="tenK" type="checkbox" name="tenK" value="tenK">
+                <label for="tenK" class="checkboxChild">10K</label>
+                <input id="halfMarathon" type="checkbox" name="halfMarathon" value="halfMarathon">
+                <label for="halfMarathon" class="checkboxChild">Half Marathon</label>
+                <input id="marathon" type="checkbox" name="marathon" value="marathon">
+                <label for="marathon" class="checkboxChild">Marathon</label>
+                <input id="noRace" type="checkbox" name="noRace" value="noRace">
+                <label for="noRace" class="checkboxChild">No races planned</label>
+                <button id="raceSubmit" type="button" name="button">Next</button>
+            </section>
+        </section>
+    </section> -->
+
+    <section id="arch" class="hidden mainContainer">
+        <section class="question">
+            <h2>What arch type do you have?</h2>
+            <p>Select the image that best matches your arch.</p>
+            <a href="#">Not Sure?</a>
+            <section class="answers">
+                <button id="flatArch" type="button" value="flatArch">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/flatArch.png" alt="">
+                    <p>Flat</p>
+                </button>
+                <button id="normArch" type="button" value="normArch">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/mediumArch.png" alt="">
+                    <p>Medium</p></button>
+                <button id="highArch" type="button" value="highArch">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/highArch.png" alt="">
+                    <p>High</p>
+            </button>
+            </section>
+        </section>
+    </section>
+
+    <section id="legs" class="hidden mainContainer">
+        <section class="question">
+            <h2>What is your leg shape?</h2>
+            <p>Stand with your feet and ankles together. Select the image that matches your leg shape.</p>
+            <section class="answers">
+                <button id="knockKnee" type="button" value="knockKnee">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/knockKnees.png" alt="">
+                    <p>Knock Knees</p>
+                    </button>
+                <button id="straightLegs" type="button" value="straightLegs">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/straightLegs.png" alt="">
+                    <p>Straight</p>
+                    </button>
+                <button id="bow" type="button" value="bow">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/bowLegs.png" alt="">
+                    <p>Bow Legs</p>
+                    </button>
+            </section>
+        </section>
+    </section>
+
+    <section id="kneeTrack" class="hidden mainContainer">
+        <section class="question">
+            <h2>How does your knee track in a shallow squat?</h2>
+            <p>Without shoes on perform a few shallow single-leg squats with each leg. Select the image that best matches your knee track in the squat.</p>
+            <section class="answers">
+                <button id="rotateOut" type="button" value="rotateOut">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/rotateOut.png" alt="">
+                    <p>Knees Rotate Outward</p>
+                    </button>
+                <button id="straight" type="button" value="straight">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/straightBend.png" alt="">
+                    <p>Knee Tracks Straight</p>
+                    </button>
+                <button id="rotateIn" type="button" value="rotateIn">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/rotateIn.png" alt="">
+                    <p>Knee Tracks Inward</p>
+                    </button>
+            </section>
+        </section>
+    </section>
+
+    <!-- <section id="injury" class="hidden mainContainer">
+        <section class="question">
+            <h2>Do you have any aches or pains?</h2>
+            <section class="answers">
+                <input id="back" type="checkbox" name="back" value="back">
+                <label for="back">Back</label>
+                <input id="hips" type="checkbox" name="hips" value="hips">
+                <label for="hips">Hips</label>
+                <input id="knees" type="checkbox" name="knees" value="knees">
+                <label for="knees">Knees</label>
+                <input id="calves" type="checkbox" name="calves" value="calves">
+                <label for="calves">Calves</label>
+                <input id="shins" type="checkbox" name="shins" value="shins">
+                <label for="shins">Shins</label>
+                <input id="achilles" type="checkbox" name="achilles" value="achilles">
+                <label for="achilles">Achilles/Ankle</label>
+                <input id="feet" type="checkbox" name="feet" value="feet">
+                <label for="feet">Feet</label>
+                <input id="bunions" type="checkbox" name="bunions" value="bunions">
+                <label for="bunions">Bunions</label>
+                <input id="plantar" type="checkbox" name="plantar" value="plantar">
+                <label for="plantar">Plantar Fasciitis</label>
+                <input id="noInjury" type="checkbox" name="noInjury" value="noInjury">
+                <label for="noInjury">So far, so good!</label>
+                <button id="injurySubmit" type="button" name="button">Next</button>
+            </section>
+        </section>
+    </section> -->
+
+    <section id="cushion" class="hidden mainContainer">
+        <section class="question">
+            <h2>What is your preferred cushion level?</h2>
+            <section class="answers">
+                <button id="lightFast" type="button" value="lightFast">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/lightCushion.png" alt="">
+                    <p>Light & Fast</p>
+                    </button>
+                <button id="midCushion" type="button" value="midCushion">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/mediumCushion.png" alt="">
+                    <p>Medium Cushion</p>
+                    </button>
+                <button id="maxCushion" type="button" value="maxCushion">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/maxCushion.png" alt="">
+                    <p>Max Cushion</p>
+                    </button>
+            </section>
+        </section>
+    </section>
+
+    <!-- <section id="brand" class="hidden mainContainer">
+        <section class="question">
+            <h2>What brands do you like?</h2>
+            <section class="answers">
+                <input id="altra" type="checkbox" name="altra" value="altra">
+                <label for="altra">Altra</label>
+                <input id="asics" type="checkbox" name="asics" value="asics">
+                <label for="asics">Asics</label>
+                <input id="brooks" type="checkbox" name="brooks" value="brooks">
+                <label for="brooks">Brooks</label>
+                <input id="hoka" type="checkbox" name="hoka" value="hoka">
+                <label for="hoka">HOKA One One</label>
+                <input id="mizuno" type="checkbox" name="mizuno" value="mizuno">
+                <label for="mizuno">Mizuno</label>
+                <input id="newBalance" type="checkbox" name="newBalance" value="newBalance">
+                <label for="newBalance">New Balance</label>
+                <input id="nike" type="checkbox" name="nike" value="nike">
+                <label for="nike">Nike</label>
+                <input id="onRunning" type="checkbox" name="onRunning" value="onRunning">
+                <label for="onRunning">ON</label>
+                <input id="saucony" type="checkbox" name="saucony" value="saucony">
+                <label for="saucony">Saucony</label>
+                <input id="notPicky" type="checkbox" name="notPicky" value="notPicky">
+                <label for="notPicky">Show me everything!</label>
+                <button id="brandSubmit" type="button" name="button">Next</button>
+            </section>
+        </section>
+    </section> -->
+
+    <section id="gender" class="hidden mainContainer">
+        <section class="question">
+            <h2>What gender shoe are you looking for?</h2>
+            <section class="answers">
+                <button id="womensShoes" type="button" value="womensShoes">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/womens.png" alt="">
+                    <p>Women's Shoes</p>
+                    </button>
+                <button id="mensShoes" type="button" value="mensShoes">
+                    <img src="https://p2shoefinder.netlify.app/images/answerPics/mens.png" alt="">
+                    <p>Men's Shoes</p>
+                    </button>
+            </section>
+        </section>
+    </section>
+
+    <!-- <section class="hidden mainContainer">
+        <section class="question">
+            <h2>What is your shoe size?</h2>
+            <select name="womensSize" id="womensShoeSize">
+                <option value="5">5</option>
+                <option value="5.5">5.5</option>
+                <option value="6">6</option>
+                <option value="6.5">6.5</option>
+                <option value="7">7</option>
+                <option value="7.5">7.5</option>
+                <option selected="selected" value="8">8</option>
+                <option value="8.5">8.5</option>
+                <option value="9">9</option>
+                <option value="9.5">9.5</option>
+                <option value="10">10</option>
+                <option value="10.5">10.5</option>
+                <option value="11">11</option>
+                <option value="11.5">11.5</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+            </select>
+        </section>
+    </section>
+
+    <section class="hidden mainContainer">
+        <section class="question">
+            <h2>What is your shoe size?</h2>
+            <select name="mensSize" id="mensShoeSize">
+                <option value="7">7</option>
+                <option value="7.5">7.5</option>
+                <option value="8">8</option>
+                <option value="8.5">8.5</option>
+                <option value="9">9</option>
+                <option value="9.5">9.5</option>
+                <option selected="selected" value="10">10</option>
+                <option value="10.5">10.5</option>
+                <option value="11">11</option>
+                <option value="11.5">11.5</option>
+                <option value="12">12</option>
+                <option value="12.5">12.5</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+            </select>
+        </section>
+    </section> -->
+
+    <!-- <section>
+        <button class="restartBttn" type="button" value="restartBttn">Restart</button>
+    </section> -->
+
+    <section id="results" class="hidden">
+        <section id="resultContainer">
+            <section id="displayContainer">
+                <h2 id="displayResult"></h2>
+                <p>Here are some great options that fit your needs!</p>
+                <a href="#">What does this mean?</a>
+            </section>
+
+            <!-- Men's Shoes -->
+
+            <!-- Men's Light Cushion Nuetral -->
+
+            <section id="rinconM" class="hoka mNeutralLight shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1028162/Hoka-One-One/Men-s-Rincon-3" target="_blank">
+                    <h4>HOKA One One Rincon 3</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mRincon3.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1028162/Hoka-One-One/Men-s-Rincon-3">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="cloudXM" class="onRunning mNeutralLight  shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1021930/On/Men-s-Cloud-X" target="_blank">
+                    <h4>On Cloud X</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mCloudX.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1021930/On/Men-s-Cloud-X">Shop Now</a>
+                </a>
+            </section>
+
+            <!-- <section id="kinvaraM" class="saucony mNeutralLight shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>Saucony Kinvara 14</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section> -->
+
+            <section id="speedM" class="saucony mNeutralLight shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027105/Saucony/Men-s-Endorphin-Speed-2" target="_blank">
+                    <h4>Saucony Endorphin Speed 2</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mSpeed2.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027105/Saucony/Men-s-Endorphin-Speed-2">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="machM" class="hoka mNeutralLight shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027138/Hoka-One-One/Men-s-Mach-4" target="_blank">
+                    <h4>HOKA One One Mach 4</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mMach4.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027138/Hoka-One-One/Men-s-Mach-4">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="launchM" class="brooks mNeutralLight shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>Brooks Launch 9</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mLaunch9.png" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section>
+
+            <!-- <section id="carbonXM" class="hoka mNeutralLight shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>HOKA One One Carbon X 2</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section> -->
+
+            <section id="hyperionTempoM" class="brooks mNeutralLight shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1002001/Brooks/Men-s-Hyperion-Tempo" target="_blank">
+                    <h4>Brooks Hyperion Tempo</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mHyperionTempo.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1002001/Brooks/Men-s-Hyperion-Tempo">Shop Now</a>
+                </a>
+            </section>
+            <!-- <section id="hyperionEliteM" class="brooks mNeutralLight shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1052796/Brooks/Unisex-Hyperion-Elite-2" target="_blank">
+                    <h4>Brooks Hyperion Elite 2</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1052796/Brooks/Unisex-Hyperion-Elite-2">Shop Now</a>
+                </a>
+            </section> -->
+
+            <!-- Men's Medium Cushion Nuetral -->
+
+            <section id="ghostM" class="brooks mNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1016378/Brooks/Men-s-Ghost-14" target="_blank">
+                    <h4>Brooks Ghost 14</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mGhost14.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1016378/Brooks/Men-s-Ghost-14">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="rideM" class="saucony mNeutralMid shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>Saucony Ride 15</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mRide15.png" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="cloudflowM" class="onRunning mNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027294/On/Men-s-Cloudflow-3" target="_blank">
+                    <h4>On Cloudflow</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mCloudflow.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027294/On/Men-s-Cloudflow-3">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="eightEightyM" class="newBalance mNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027008/New-Balance/Men-s-880v11" target="_blank">
+                    <h4>New Balance 880v11</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/m880v11.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027008/New-Balance/Men-s-880v11">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="riderM" class="mizuno mNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027338/Mizuno/Men-s-Wave-Rider-25" target="_blank">
+                    <h4>Mizuno Wave Rider 25</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mWaveRider25.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027338/Mizuno/Men-s-Wave-Rider-25">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="escalanteM" class="altra mNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1002562/Altra/Men-s-Escalante-2-5" target="_blank">
+                    <h4>Altra Escalante 2.5</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mEscalante2.5.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1002562/Altra/Men-s-Escalante-2-5">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="pegasusM" class="nike mNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027689/Nike/Men-s-Pegasus-38" target="_blank">
+                    <h4>Nike Pegasus 38</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mPegasus38.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027689/Nike/Men-s-Pegasus-38">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="traceM" class="brooks mNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1026981/Brooks/Men-s-Trace" target="_blank">
+                    <h4>Brooks Trace</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mTrace.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1026981/Brooks/Men-s-Trace">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="evorideM" class="asics mNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1028730/ASICS/Men-s-EvoRide-2" target="_blank">
+                    <h4>Asics EvoRide 2</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mEvoRide2.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1028730/ASICS/Men-s-EvoRide-2">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="kawanaM" class="hoka mNeutralMid hidden shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1153753/Hoka-One-One/Men-s-Kawana" target="_blank">
+                    <h4>HOKA One One Kawana</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mKawana.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1153753/Hoka-One-One/Men-s-Kawana">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="riveraM" class="altra mNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1002717/Altra/Men-s-Rivera" target="_blank">
+                    <h4>Altra Rivera</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mRivera.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1002717/Altra/Men-s-Rivera">Shop Now</a>
+                </a>
+            </section>
+
+            <!-- <section id="cloudgoM" class="onRunning mNeutralMid shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>On Cloudgo</h4>
+                    <h4> <img src="https://p2shoefinder.netlify.app/images/shoes/" alt=""></h4>
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section> -->
+
+            <!-- <section id="zoomFlyM" class="nike mNeutralMid shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>Nike Zoom Fly</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section> -->
+
+            <!-- Men's Max Cushion Nuetral -->
+
+            <section id="bondiM" class="hoka mNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1003969/Hoka-One-One/Men-s-Bondi-7" target="_blank">
+                    <h4>HOKA One One Bondi 7</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mBondi7.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1003969/Hoka-One-One/Men-s-Bondi-7">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="cliftonM" class="hoka mNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027102/Hoka-One-One/Men-s-Clifton-8" target="_blank">
+                    <h4>HOKA One One Clifton 8</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mClifton8.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027102/Hoka-One-One/Men-s-Clifton-8">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="glycerinM" class="brooks mNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1002207/Brooks/Men-s-Glycerin-19" target="_blank">
+                    <h4>Brooks Glycerin 19</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mGlycerin19.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1002207/Brooks/Men-s-Glycerin-19">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="torinM" class="altra mNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1023095/Altra/Men-s-Torin-5" target="_blank">
+                    <h4>Altra Torin 5</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mTorin5.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1023095/Altra/Men-s-Torin-5">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="nimbusM" class="asics mNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1093823/ASICS/Men-s-Nimbus-24" target="_blank">
+                    <h4>Asics Gel-Nimbus 24</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mNimbus24.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1093823/ASICS/Men-s-Nimbus-24">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="levitateM" class="brooks mNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1028811/Brooks/Men-s-Levitate-5" target="_blank">
+                    <h4>Brooks Levitate 5</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mLevitate5.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1028811/Brooks/Men-s-Levitate-5">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="triumphM" class="saucony mNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027198/Saucony/Men-s-Triumph-19" target="_blank">
+                    <h4>Saucony Triumph 19</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mTriumph19.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027198/Saucony/Men-s-Triumph-19">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="tenEightyM" class="newBalance mNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1026733/New-Balance/Men-s-Fresh-Foam-1080v11" target="_blank">
+                    <h4>New Balance 1080v11</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/m1080v11.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1026733/New-Balance/Men-s-Fresh-Foam-1080v11">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="cloudStratusM" class="onRunning mNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1031947/On/Men-s-Cloudstratus" target="_blank">
+                    <h4>On CloudStratus</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mCloudstratus.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1031947/On/Men-s-Cloudstratus">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="cloudMonsterM" class="onRunning mNeutralMax shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>On CloudMonster</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mCloudMonster.png" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="vomeroM" class="nike mNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1071634/Nike/Men-s-Vomero-16" target="_blank">
+                    <h4>Nike Vomero</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mVomero16.png" alt=""></h4>
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1071634/Nike/Men-s-Vomero-16">Shop Now</a>
+                </a>
+            </section>
+
+            <!-- Men's Light Cushion Stability -->
+
+            <section id="launchGTSM" class="brooks mStabilityLight shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>Brooks Launch GTS 9</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mLaunchGTS9.png" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section>
+
+            <!-- Men's Medium Cushion Stability -->
+
+            <section id="adrenalineM" class="brooks mStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1064211/Brooks/Men-s-Adrenaline-GTS-22" target="_blank">
+                    <h4>Brooks Adrenaline GTS 22</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mAdrenaline22.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1064211/Brooks/Men-s-Adrenaline-GTS-22">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="arahiM" class="hoka mStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1156109/Hoka-One-One/Men-s-Arahi-6" target="_blank">
+                    <h4>HOKA One One Arahi 6</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mArahi6.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1156109/Hoka-One-One/Men-s-Arahi-6">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="eightSixtyM" class="newBalance mStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1047635/New-Balance/Men-s-860v12" target="_blank">
+                    <h4>New Balance 860v12</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/m860v12.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1047635/New-Balance/Men-s-860v12">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="guideM" class="saucony mStabilityMid shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>Saucony Guide 15</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mGuide15.png" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="cloudflyerM" class="onRunning mStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1021928/On/Men-s-Cloudflyer" target="_blank">
+                    <h4>On Cloudflyer</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mCloudflyer.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1021928/On/Men-s-Cloudflyer">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="gtTwoThousandM" class="asics mStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1058509/ASICS/Men-s-GT-2000-10" target="_blank">
+                    <h4>Asics GT-2000 10</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mGT200010.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1058509/ASICS/Men-s-GT-2000-10">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="omniM" class="saucony mStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027194/Saucony/Men-s-Omni-20" target="_blank">
+                    <h4>Saucony Omni 20</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mOmni20.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027194/Saucony/Men-s-Omni-20">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="provisionM" class="altra mStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1066422/Altra/Men-s-Provision-6" target="_blank">
+                    <h4>Altra Provision</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mProvision6.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1066422/Altra/Men-s-Provision-6">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="inspireM" class="mizuno mStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1002790/Mizuno/Men-s-Wave-Inspire-17" target="_blank">
+                    <h4>Mizuno Wave Inspire 17</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mWaveInspire17.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1002790/Mizuno/Men-s-Wave-Inspire-17">Shop Now</a>
+                </a>
+            </section>
+
+            <!-- Men's Max Cushion Stability -->
+
+            <section id="glycerinGTSM" class="brooks mStabilityMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1002197/Brooks/Men-s-Glycerin-GTS-19" target="_blank">
+                    <h4>Brooks Glycerin GTS 19</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mGlycerinGTS19.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1002197/Brooks/Men-s-Glycerin-GTS-19">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="gaviotaM" class="hoka mStabilityMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1004038/Hoka-One-One/Men-s-Gaviota-3" target="_blank">
+                    <h4>HOKA One One Gaviota 4</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mGaviota3.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1004038/Hoka-One-One/Men-s-Gaviota-3">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="shiftM" class="saucony mStabilityMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027114/Saucony/Men-s-Endorphin-Shift-2" target="_blank">
+                    <h4>Saucony Endorphin Shift 2</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mShift2.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027114/Saucony/Men-s-Endorphin-Shift-2">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="kayanoM" class="asics mStabilityMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1028747/ASICS/Men-s-Kayano-28" target="_blank">
+                    <h4>Asics Gel-Kayano 28</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mKayano28.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1028747/ASICS/Men-s-Kayano-28">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="levitateGTSM" class="brooks mStabilityMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1028813/Brooks/Men-s-Levitate-GTS-5" target="_blank">
+                    <h4>Brooks Levitate GTS 5</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mLevitateGTS5.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1028813/Brooks/Men-s-Levitate-GTS-5">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="vongoM" class="newBalance mStabilityMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1031264/New-Balance/Men-s-Vongo-v5" target="_blank">
+                    <h4>New Balance Vongo v5</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mVongo5.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1031264/New-Balance/Men-s-Vongo-v5">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="horizonM" class="mizuno mStabilityMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1002867/Mizuno/Men-s-Wave-Horizon-5" target="_blank">
+                    <h4>Mizuno Wave Horizon 5</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mWaveHorizon5.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1002867/Mizuno/Men-s-Wave-Horizon-5">Shop Now</a>
+                </a>
+            </section>
+
+            <!-- Women's Shoes -->
+
+            <!-- Women's Light Cushion Nuetral -->
+
+            <section id="cloudXW" class="onRunning wNeutralLight shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1021929/On/Women-s-Cloud-X" target="_blank">
+                    <h4>On Cloud X</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wCloudX.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1021929/On/Women-s-Cloud-X">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="launchW" class="brooks wNeutralLight shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>Brooks Launch 9</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wlaunch9.png" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="rinconW" class="hoka wNeutralLight shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1028164/Hoka-One-One/Women-s-Rincon-3" target="_blank">
+                    <h4>HOKA One One Rincon 3</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wRincon3.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1028164/Hoka-One-One/Women-s-Rincon-3">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="machW" class="hoka wNeutralLight shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1031938/Hoka-One-One/Women-s-Mach-4" target="_blank">
+                    <h4>HOKA One One Mach 4</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wMach4.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1031938/Hoka-One-One/Women-s-Mach-4">Shop Now</a>
+                </a>
+            </section>
+
+            <!-- <section id="kinvaraW" class="saucony wNeutralLight shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>Saucony Kinvara 14</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section> -->
+
+            <section id="speedW" class="saucony wNeutralLight shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027108/Saucony/Women-s-Endorphin-Speed-2" target="_blank">
+                    <h4>Saucony Endorphin Speed 2</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wSpeed2.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027108/Saucony/Women-s-Endorphin-Speed-2">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="hyperionTempoW" class="brooks wNeutralLight shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1002013/Brooks/Women-s-Hyperion-Tempo" target="_blank">
+                    <h4>Brooks Hyperion Tempo</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wHyperionTempo.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1002013/Brooks/Women-s-Hyperion-Tempo">Shop Now</a>
+                </a>
+            </section>
+
+            <!-- <section id="carbonXW" class="hoka wNeutralLight shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>HOKA One One Carbon X 2</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section> -->
+
+            <!-- <section id="hyperionEliteW" class="brooks wNeutralLight shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1052796/Brooks/Unisex-Hyperion-Elite-2" target="_blank">
+                    <h4>Brooks Hyperion Elite 2</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1052796/Brooks/Unisex-Hyperion-Elite-2">Shop Now</a>
+                </a>
+            </section> -->
+
+            <!-- Women's Medium Cushion Nuetral -->
+
+            <section id="ghostW" class="brooks wNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1016380/Brooks/Women-s-Ghost-14" target="_blank">
+                    <h4>Brooks Ghost 14</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wGhost14.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1016380/Brooks/Women-s-Ghost-14">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="rideW" class="saucony wNeutralMid shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>Saucony Ride 15</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wRide15.png" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="cloudflowW" class="onRunning wNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027298/On/Women-s-Cloudflow-3" target="_blank">
+                    <h4>On Cloudflow</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wCloudflow.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027298/On/Women-s-Cloudflow-3">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="eightEightyW" class="newBalance wNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027009/New-Balance/Women-s-880v11" target="_blank">
+                    <h4>New Balance 880v11</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/w880v11.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027009/New-Balance/Women-s-880v11">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="riderW" class="mizuno wNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027340/Mizuno/Women-s-Wave-Rider-25" target="_blank">
+                    <h4>Mizuno Wave Rider 25</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wWaveRider25.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027340/Mizuno/Women-s-Wave-Rider-25">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="escalanteW" class="altra wNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1002587/Altra/Women-s-Escalante-2-5" target="_blank">
+                    <h4>Altra Escalante 2.5</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wEscalante2.5.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1002587/Altra/Women-s-Escalante-2-5">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="traceW" class="brooks wNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1026982/Brooks/Women-s-Trace" target="_blank">
+                    <h4>Brooks Trace</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wTrace.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1026982/Brooks/Women-s-Trace">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="pegasusW" class="nike wNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027080/Nike/Women-s-Pegasus-38" target="_blank">
+                    <h4>Nike Pegasus 38</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wPegasus38.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027080/Nike/Women-s-Pegasus-38">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="evorideW" class="asics wNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1028731/ASICS/Women-s-EvoRide-2" target="_blank">
+                    <h4>Asics EvoRide 2</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wEvoRide2.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1028731/ASICS/Women-s-EvoRide-2">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="kawanaW" class="hoka wNeutralMid hidden shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1153752/Hoka-One-One/Women-s-Kawana" target="_blank">
+                    <h4>HOKA One One Kawana</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wKawana.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1153752/Hoka-One-One/Women-s-Kawana">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="riveraW" class="altra wNeutralMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1002719/Altra/Women-s-Rivera" target="_blank">
+                    <h4>Altra Rivera</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wRivera.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1002719/Altra/Women-s-Rivera">Shop Now</a>
+                </a>
+            </section>
+
+            <!-- <section id="zoomFlyW" class="nike wNeutralMid shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>Nike Zoom Fly</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section> -->
+
+            <!-- <section id="cloudgoW" class="onRunning wNeutralMid shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>On CloudGo</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section> -->
+
+            <!-- Women's Max Cushion Nuetral -->
+
+            <section id="bondiW" class="hoka wNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1003975/Hoka-One-One/Women-s-Bondi-7" target="_blank">
+                    <h4>HOKA One One Bondi 7</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wBondi7.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1003975/Hoka-One-One/Women-s-Bondi-7">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="glycerinW" class="brooks wNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1002208/Brooks/Women-s-Glycerin-19" target="_blank">
+                    <h4>Brooks Glycerin 19</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wGlycerin19.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1002208/Brooks/Women-s-Glycerin-19">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="cliftonW" class="hoka wNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027101/Hoka-One-One/Women-s-Clifton-8" target="_blank">
+                    <h4>HOKA One One Clifton 8</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wClifton8.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027101/Hoka-One-One/Women-s-Clifton-8">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="levitateW" class="brooks wNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1028809/Brooks/Women-s-Levitate-5" target="_blank">
+                    <h4>Brooks Levitate 5</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wLevitate5.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1028809/Brooks/Women-s-Levitate-5">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="torinW" class="altra wNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027104/Altra/Women-s-Torin-5" target="_blank">
+                    <h4>Altra Torin 5</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wTorin5.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027104/Altra/Women-s-Torin-5">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="triumphW" class="saucony wNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027201/Saucony/Women-s-Triumph-19" target="_blank">
+                    <h4>Saucony Triumph 19</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wTriumph19.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027201/Saucony/Women-s-Triumph-19">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="nimbusW" class="asics wNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1093822/ASICS/Women-s-Nimbus-24" target="_blank">
+                    <h4>Asics Gel-Nimbus 24</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wNimbus24.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1093822/ASICS/Women-s-Nimbus-24">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="tenEightyW" class="newBalance wNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027121/New-Balance/Women-s-Fresh-Foam-1080v11" target="_blank">
+                    <h4>New Balance 1080v12</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/w1080v11.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027121/New-Balance/Women-s-Fresh-Foam-1080v11">Shop
+                    Now</a>
+                </a>
+            </section>
+
+            <section id="cloudStratusW" class="onRunning wNeutralMax shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>On CloudStratus</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wCloudstratus.png" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="cloudMonsterW" class="onRunning wNeutralMax shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>On CloudMonster</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wClouldMonster.png" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="vomeroW" class="nike wNeutralMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1076013/Nike/Women-s-Vomero-16" target="_blank">
+                    <h4>Nike Vomero</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wVomero16.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1076013/Nike/Women-s-Vomero-16">Shop Now</a>
+                </a>
+            </section>
+
+            <!-- Women's Light Cushion Stability -->
+
+            <section id="launchGTSW" class="brooks wStabilityLight shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>Brooks Launch GTS 9</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wLaunchGTS9.png" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section>
+
+            <!-- Women's Medium Cushion Stability -->
+
+            <section id="adrenalineW" class="brooks wStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1064214/Brooks/Women-s-Adrenaline-GTS-22" target="_blank">
+                    <h4>Brooks Adrenaline GTS 22</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wAdrenaline22.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1064214/Brooks/Women-s-Adrenaline-GTS-22">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="arahiW" class="hoka wStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1156106/Hoka-One-One/Women-s-Arahi-6" target="_blank">
+                    <h4>HOKA One One Arahi 6</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wArahi6.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1156106/Hoka-One-One/Women-s-Arahi-6">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="eightSixtyW" class="newBalance wStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1047636/New-Balance/Women-s-860v12" target="_blank">
+                    <h4>New Balance 860v12</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/w860v12.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1047636/New-Balance/Women-s-860v12">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="cloudflyerW" class="onRunning wStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1021943/On/Women-s-Cloudflyer" target="_blank">
+                    <h4>On Cloudflyer</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wCloudflyer.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1021943/On/Women-s-Cloudflyer">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="guideW" class="saucony wStabilityMid shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>Saucony Guide 15</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wGuide15.png" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="omniW" class="saucony wStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027196/Saucony/Women-s-Omni-20" target="_blank">
+                    <h4>Saucony Omni 20</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wOmni20.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027196/Saucony/Women-s-Omni-20">Shop Now</a>
+                </a>
+            </section>
+
+
+            <section id="gtTwoThousandW" class="asics wStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1058406/ASICS/Women-s-GT-2000-10" target="_blank">
+                    <h4>Asics GT-2000 10</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wGT200010.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1058406/ASICS/Women-s-GT-2000-10">Shop Now</a>
+                </a>
+            </section>
+
+
+            <section id="inspireW" class="mizuno wStabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1002799/Mizuno/Women-s-Wave-Inspire-17" target="_blank">
+                    <h4>Mizuno Wave Inspire 17</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/mWaveInspire17.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1002799/Mizuno/Women-s-Wave-Inspire-17">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="provisionW" class="altra wNtabilityMid shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1066424/Altra/Women-s-Provision-6" target="_blank">
+                    <h4>Altra Provision</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wProvision6.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1066424/Altra/Women-s-Provision-6">Shop Now</a>
+                </a>
+            </section>
+
+            <!-- Women's Max Cushion Stability -->
+
+            <section id="glycerinGTSW" class="brooks wStabilityMax shoeBlock hidden">
+                <a href="" target="_blank">
+                    <h4>Brooks Glycerin GTS 19</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wGlycerinGTS19.png" alt="">
+                    <a class="shopBttn" target="_blank" href="">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="shiftW" class="saucony wStabilityMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1027115/Saucony/Women-s-Endorphin-Shift-2" target="_blank">
+                    <h4>Saucony Endorphin Shift 2</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wShift2.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1027115/Saucony/Women-s-Endorphin-Shift-2">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="levitateGTSW" class="brooks wStabilityMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1028815/Brooks/Women-s-Levitate-GTS-5" target="_blank">
+                    <h4>Brooks Levitate GTS 5</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wLevitateGTS5.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1028815/Brooks/Women-s-Levitate-GTS-5">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="gaviotaW" class="hoka wStabilityMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1004035/Hoka-One-One/Women-s-Gaviota-3" target="_blank">
+                    <h4>HOKA One One Gaviota 4</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wGaviota3.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1004035/Hoka-One-One/Women-s-Gaviota-3">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="kayanoW" class="asics wStabilityMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1120778/ASICS/Women-s-Kayano-28" target="_blank">
+                    <h4>Asics Gel-Kayano 28</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wKayano28.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1120778/ASICS/Women-s-Kayano-28">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="vongoW" class="newBalance wStabilityMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1031266/New-Balance/Women-s-Vongo-v5" target="_blank">
+                    <h4>New Balance Vongo v5</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wVongo5.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1031266/New-Balance/Women-s-Vongo-v5">Shop Now</a>
+                </a>
+            </section>
+
+            <section id="horizonW" class="mizuno wStabilityMax shoeBlock hidden">
+                <a href="https://shop.runpoint2.com/product/1002870/Mizuno/Women-s-Wave-Horizon-5" target="_blank">
+                    <h4>Mizuno Wave Horizon 5</h4>
+                    <img src="https://p2shoefinder.netlify.app/images/shoes/wWaveHorizon5.png" alt="">
+                    <a class="shopBttn" target="_blank" href="https://shop.runpoint2.com/product/1002870/Mizuno/Women-s-Wave-Horizon-5">Shop Now</a>
+                </a>
+            </section>
+
+
+        </section>
+    </section>
+
+    <footer>
+        <section>© Copyright Point 2 Running Company 2022</section>
+    </footer>
+
+    <script>
+        // Variables for selecting different questions and shoe categories
+
+        const shoeUse = document.querySelector('#shoeUse');
+        const mileage = document.querySelector('#mileage');
+        const races = document.querySelector('#races');
+        const arch = document.querySelector('#arch');
+        const legs = document.querySelector('#legs');
+        const kneeTrack = document.querySelector('#kneeTrack');
+        const cushion = document.querySelector('#cushion');
+        const brand = document.querySelector('#brand');
+        const gender = document.querySelector('#gender');
+        const mNeutralLight = document.querySelectorAll('.mNeutralLight');
+        const mNeutralMid = document.querySelectorAll('.mNeutralMid');
+        const mNeutralMax = document.querySelectorAll('.mNeutralMax');
+        const mStabilityLight = document.querySelectorAll('.mStabilityLight');
+        const mStabilityMid = document.querySelectorAll('.mStabilityMid');
+        const mStabilityMax = document.querySelectorAll('.mStabilityMax');
+        const wNeutralLight = document.querySelectorAll('.wNeutralLight');
+        const wNeutralMid = document.querySelectorAll('.wNeutralMid');
+        const wNeutralMax = document.querySelectorAll('.wNeutralMax');
+        const wStabilityLight = document.querySelectorAll('.wStabilityLight');
+        const wStabilityMid = document.querySelectorAll('.wStabilityMid');
+        const wStabilityMax = document.querySelectorAll('.wStabilityMax');
+
+        // Variable that holds users support needed
+
+        let supportLevel = 0;
+
+        // Users intended use for shoes
+
+        document.querySelector('#running').addEventListener('click', running);
+        document.querySelector('#walking').addEventListener('click', walking);
+        document.querySelector('#everyday').addEventListener('click', everyday);
+
+        // functions below hide question once answered and progress to next question
+
+        function running() {
+            shoeUse.classList.add('hidden');
+            mileage.classList.toggle('hidden');
+        }
+
+        function walking() {
+            shoeUse.classList.add('hidden');
+            mileage.classList.toggle('hidden');
+        }
+
+        function everyday() {
+            shoeUse.classList.add('hidden');
+            mileage.classList.toggle('hidden');
+        }
+
+        // Mileage
+
+        document.querySelector('#underTen').addEventListener('click', underTen);
+        document.querySelector('#tenToTwenty').addEventListener('click', tenToTwenty);
+        document.querySelector('#moreThanThirty').addEventListener('click', moreThanThirty);
+
+        function underTen() {
+            mileage.classList.toggle('hidden');
+            arch.classList.toggle('hidden');
+        }
+
+        function tenToTwenty() {
+            mileage.classList.toggle('hidden');
+            arch.classList.toggle('hidden');
+        }
+
+        function moreThanThirty() {
+            mileage.classList.toggle('hidden');
+            arch.classList.toggle('hidden');
+        }
+
+        // Events the user is training for
+
+        // document.querySelector('#raceSubmit').addEventListener('click', upcomingRaces);
+
+        // function upcomingRaces() {
+        //     races.classList.toggle('hidden');
+        //     arch.classList.toggle('hidden');
+        // }
+
+        // Arch type
+
+        document.querySelector('#flatArch').addEventListener('click', flatArch);
+        document.querySelector('#normArch').addEventListener('click', normArch);
+        document.querySelector('#highArch').addEventListener('click', highArch);
+
+        function flatArch() {
+            arch.classList.toggle('hidden');
+            legs.classList.toggle('hidden');
+            supportLevel = supportLevel + 1;
+        }
+
+        function normArch() {
+            arch.classList.toggle('hidden');
+            legs.classList.toggle('hidden');
+            supportLevel = 0;
+        }
+
+        function highArch() {
+            arch.classList.toggle('hidden');
+            legs.classList.toggle('hidden');
+            supportLevel = supportLevel - 1;
+        }
+
+        // Leg shape
+
+        document.querySelector('#knockKnee').addEventListener('click', knockKnee);
+        document.querySelector('#straightLegs').addEventListener('click', straightLegs);
+        document.querySelector('#bow').addEventListener('click', bow);
+
+        function knockKnee() {
+            legs.classList.toggle('hidden');
+            kneeTrack.classList.toggle('hidden');
+            supportLevel = supportLevel + 1;
+        }
+
+        function straightLegs() {
+            legs.classList.toggle('hidden');
+            kneeTrack.classList.toggle('hidden');
+        }
+
+        function bow() {
+            legs.classList.toggle('hidden');
+            kneeTrack.classList.toggle('hidden');
+            supportLevel = supportLevel - 1;
+        }
+
+        // Knee track
+
+        document.querySelector('#rotateOut').addEventListener('click', rotateOut);
+        document.querySelector('#straight').addEventListener('click', straight);
+        document.querySelector('#rotateIn').addEventListener('click', rotateIn);
+
+        function rotateOut() {
+            kneeTrack.classList.toggle('hidden');
+            cushion.classList.toggle('hidden');
+            supportLevel = supportLevel - 1;
+        }
+
+        function straight() {
+            kneeTrack.classList.toggle('hidden');
+            cushion.classList.toggle('hidden');
+        }
+
+        function rotateIn() {
+            kneeTrack.classList.toggle('hidden');
+            cushion.classList.toggle('hidden');
+            supportLevel = supportLevel + 1;
+        }
+
+        // Injury history
+
+        // document.querySelector('#injurySubmit').addEventListener('click', injuries);
+
+        // function injuries() {
+        //     injury.classList.toggle('hidden');
+        //     cushion.classList.toggle('hidden');
+
+        // }
+
+        // Desried cushion level
+
+        document.querySelector('#lightFast').addEventListener('click', lightFast);
+        document.querySelector('#midCushion').addEventListener('click', midCushion);
+        document.querySelector('#maxCushion').addEventListener('click', maxCushion);
+
+        let cushionLevel = 'error';
+
+        function lightFast() {
+            cushion.classList.toggle('hidden');
+            gender.classList.toggle('hidden');
+            cushionLevel = document.querySelector('#lightFast').value;
+        }
+
+        function midCushion() {
+            cushion.classList.toggle('hidden');
+            gender.classList.toggle('hidden');
+            cushionLevel = document.querySelector('#midCushion').value;
+
+        }
+
+        function maxCushion() {
+            cushion.classList.toggle('hidden');
+            gender.classList.toggle('hidden');
+            cushionLevel = document.querySelector('#maxCushion').value;
+        }
+
+        // Preferred brands
+
+        // document.querySelector('#brandSubmit').addEventListener('click', brandSubmit);
+
+        // function brandSubmit() {
+        //     brand.classList.toggle('hidden');
+        //     gender.classList.toggle('hidden');
+        // }
+
+        // Gender
+
+        let shoeGender;
+        document.querySelector('#womensShoes').addEventListener('click', womensShoes);
+        document.querySelector('#mensShoes').addEventListener('click', mensShoes);
+
+        function womensShoes() {
+            gender.classList.toggle('hidden');
+            results.classList.toggle('hidden');
+            shoeGender = 'womens';
+            finalResult();
+        }
+
+        function mensShoes() {
+            gender.classList.toggle('hidden');
+            results.classList.toggle('hidden');
+            shoeGender = 'mens';
+            finalResult();
+        }
+
+        // Desired size
+
+        // Display category user needs based on support needs, desired cushion, and gender.
+
+        function finalResult() {
+            if (supportLevel > 0 && cushionLevel === 'lightFast' && shoeGender === 'mens') {
+                document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
+                mStabilityLight.forEach(x => {
+                    x.classList.toggle('hidden');
+                })
+            } else if (supportLevel > 0 && cushionLevel === 'midCushion' && shoeGender === 'mens') {
+                document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
+                mStabilityMid.forEach(x => {
+                    x.classList.toggle('hidden');
+                })
+            } else if (supportLevel > 0 && cushionLevel === 'maxCushion' && shoeGender === 'mens') {
+                document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
+                mStabilityMax.forEach(x => {
+                    x.classList.toggle('hidden');
+                })
+            } else if (supportLevel <= 0 && cushionLevel === 'lightFast' && shoeGender === 'mens') {
+                document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
+                mNeutralLight.forEach(x => {
+                    x.classList.toggle('hidden');
+                })
+            } else if (supportLevel <= 0 && cushionLevel === 'midCushion' && shoeGender === 'mens') {
+                document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
+                mNeutralMid.forEach(x => {
+                    x.classList.toggle('hidden');
+                })
+            } else if (supportLevel <= 0 && cushionLevel === 'maxCushion' && shoeGender === 'mens') {
+                document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
+                mNeutralMax.forEach(x => {
+                    x.classList.toggle('hidden');
+                })
+            } else if (supportLevel > 0 && cushionLevel === 'lightFast' && shoeGender === 'womens') {
+                document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
+                wStabilityLight.forEach(x => {
+                    x.classList.toggle('hidden');
+                })
+            } else if (supportLevel > 0 && cushionLevel === 'midCushion' && shoeGender === 'womens') {
+                document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
+                wStabilityMid.forEach(x => {
+                    x.classList.toggle('hidden');
+                })
+            } else if (supportLevel > 0 && cushionLevel === 'maxCushion' && shoeGender === 'womens') {
+                document.querySelector('#displayResult').innerText = 'You need a Stability Shoe!';
+                wStabilityMax.forEach(x => {
+                    x.classList.toggle('hidden');
+                })
+            } else if (supportLevel <= 0 && cushionLevel === 'lightFast' && shoeGender === 'womens') {
+                document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
+                wNeutralLight.forEach(x => {
+                    x.classList.toggle('hidden');
+                })
+            } else if (supportLevel <= 0 && cushionLevel === 'midCushion' && shoeGender === 'womens') {
+                document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
+                wNeutralMid.forEach(x => {
+                    x.classList.toggle('hidden');
+                })
+            } else if (supportLevel <= 0 && cushionLevel === 'maxCushion' && shoeGender === 'womens') {
+                document.querySelector('#displayResult').innerText = 'You need a Neutral Shoe!';
+                wNeutralMax.forEach(x => {
+                    x.classList.toggle('hidden');
+                })
+            } else {
+                document.querySelector('#result').innerText = 'Error';
+            }
+        }
+
+
+        // Tasks
+        // Add Back button
+        // Add restart button
+        // Only show brands selected
+        // Show recommended insoles based on leg and arch type
+        // Show injury support accessories based on items checked
+        // Show nutrition based on races selected
+    </script>
+</body>
