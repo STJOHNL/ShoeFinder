@@ -44,17 +44,17 @@ button {
     cursor: pointer;
 }
 
-.restartBttn {
+#restartBttn {
     background-color: #ff6600;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border: none;
     border-radius: 55px;
     padding: 15px 30px;
     transition: all .2s ease-in-out;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
-.restartBttn:hover {
+#restartBttn:hover {
     background-color: #ff8533;
     transform: scale(1.1);
 }
@@ -152,6 +152,26 @@ button {
 .distanceBttns button:hover {
     background-color: #ff8533;
     transform: scale(1.1);
+}
+
+.moreInfo {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 5% 5%;
+    margin: 5%;
+    border: 2px solid #ff6600;
+}
+
+.moreInfo h3 {
+    color: #ff6600;
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.moreInfo p {
+    font-weight: 300;
+    font-size: 1.2rem;
 }
 
 
@@ -261,6 +281,16 @@ button {
     }
     .question>h2 {
         font-size: 2rem;
+    }
+    .moreInfo h3 {
+        color: #ff6600;
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+    #displayContainer .moreInfo p {
+        font-weight: 300;
+        font-size: 1rem;
     }
 }
 

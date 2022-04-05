@@ -77,7 +77,11 @@
         <section class="question">
             <h2>What arch type do you have?</h2>
             <p>Select the image that best matches your arch.</p>
-            <a href="#">Not Sure?</a>
+            <a href="#" id="archUnsure">Not Sure?</a>
+            <section id="archUnsureCont" class="hidden moreInfo">
+                <h3>Determining your foot arch</h3>
+                <p>Dip your foot in water and then step on a piece of cardboard and examine the print that remains.</p>
+            </section>
             <section class="answers">
                 <button id="flatArch" type="button" value="flatArch">
                     <img src="images/answerPics/flatArch.png" alt="">
@@ -277,16 +281,18 @@
         </section>
     </section> -->
 
-    <!-- <section>
-        <button class="restartBttn" type="button" value="restartBttn">Restart</button>
-    </section> -->
-
     <section id="results" class="hidden">
         <section id="resultContainer">
             <section id="displayContainer">
                 <h2 id="displayResult"></h2>
                 <p>Here are some great options that fit your needs!</p>
-                <a href="#">What does this mean?</a>
+                <a href="#" id="shoeCatInfo">What does this mean?</a>
+                <section id="shoeCatInfoCont" class="hidden moreInfo">
+                    <h3>What does this mean?</h3>
+                    <p>Neutral shoes do not have any stabilizing features. They allow the foot to move and flex without any guidance. Stability shoes are designed to help offset over pronation, or the inward rolling of a person's foot after impact with the
+                        ground.
+                    </p>
+                </section>
             </section>
 
             <!-- Men's Shoes -->
@@ -1122,9 +1128,9 @@
 
         </section>
     </section>
-
+    <button id="restartBttn" type="submit" onClick="refreshPage()">Restart</button>
     <footer>
-        <section>© Copyright Point 2 Running Company 2022</section>
+        <!-- <section>© Copyright Point 2 Running Company 2022</section> -->
     </footer>
 
     <script type="text/javascript" src="js/main.js"></script>

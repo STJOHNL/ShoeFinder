@@ -81,9 +81,14 @@ function moreThanThirty() {
 
 // Arch type
 
+document.querySelector('#archUnsure').addEventListener('click', archUnsure);
 document.querySelector('#flatArch').addEventListener('click', flatArch);
 document.querySelector('#normArch').addEventListener('click', normArch);
 document.querySelector('#highArch').addEventListener('click', highArch);
+
+function archUnsure() {
+    document.querySelector('#archUnsureCont').classList.toggle('hidden');
+}
 
 function flatArch() {
     arch.classList.toggle('hidden');
@@ -218,6 +223,12 @@ function mensShoes() {
 // Desired size
 
 // Display category user needs based on support needs, desired cushion, and gender.
+document.querySelector('#shoeCatInfo').addEventListener('click', showCatInfo);
+
+function showCatInfo() {
+    document.querySelector('#shoeCatInfoCont').classList.toggle('hidden');
+}
+
 
 function finalResult() {
     if (supportLevel > 0 && cushionLevel === 'lightFast' && shoeGender === 'mens') {
@@ -285,6 +296,9 @@ function finalResult() {
     }
 }
 
+function refreshPage() {
+    window.location.reload();
+}
 
 // Tasks
 // Add Back button
