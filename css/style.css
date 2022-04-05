@@ -54,6 +54,7 @@ button {
     border-radius: 55px;
     padding: 15px 30px;
     transition: all .2s ease-in-out;
+    margin-bottom: 7%;
 }
 
 #restartBttn:hover {
