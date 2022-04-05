@@ -189,6 +189,7 @@ button {
     border-radius: 20px;
     margin: 2% 10%;
     background-color: #fafafa;
+    box-shadow: 4px 4px 10px 2px #00000050;
 }
 
 .shoeBlock {
